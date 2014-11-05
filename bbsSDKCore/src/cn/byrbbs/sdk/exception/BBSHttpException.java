@@ -1,4 +1,4 @@
-package com.byrbbs.sdk.exception;
+package cn.byrbbs.sdk.exception;
 
 public class BBSHttpException extends Exception {
 	private static final long serialVersionUID = 1L;

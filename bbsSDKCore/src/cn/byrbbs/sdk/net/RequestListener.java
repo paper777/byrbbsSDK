@@ -1,6 +1,6 @@
-package com.byrbbs.sdk.net;
+package cn.byrbbs.sdk.net;
 
-import com.byrbbs.sdk.exception.BBSException;
+import cn.byrbbs.sdk.exception.BBSException;
 
 public abstract interface RequestListener {
   public abstract void onComplete(String paramString);

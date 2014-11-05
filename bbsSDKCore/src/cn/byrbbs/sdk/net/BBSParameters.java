@@ -1,4 +1,4 @@
-package com.byrbbs.sdk.net;
+package cn.byrbbs.sdk.net;
 
 import java.io.ByteArrayOutputStream;
 import java.io.UnsupportedEncodingException;

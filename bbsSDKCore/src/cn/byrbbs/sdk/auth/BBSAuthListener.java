@@ -1,6 +1,6 @@
-package com.byrbbs.sdk.auth;
+package cn.byrbbs.sdk.auth;
 
-import com.byrbbs.sdk.exception.BBSException;
+import cn.byrbbs.sdk.exception.BBSException;
 
 import android.os.Bundle;
 

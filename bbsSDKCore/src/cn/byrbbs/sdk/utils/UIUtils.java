@@ -1,4 +1,4 @@
-package com.byrbbs.sdk.utils;
+package cn.byrbbs.sdk.utils;
 
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;

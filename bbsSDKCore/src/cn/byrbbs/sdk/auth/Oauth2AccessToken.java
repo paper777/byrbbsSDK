@@ -1,4 +1,4 @@
-package com.byrbbs.sdk.auth;
+package cn.byrbbs.sdk.auth;
 
 import org.json.JSONException;
 import org.json.JSONObject;

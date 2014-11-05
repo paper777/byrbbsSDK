@@ -1,4 +1,4 @@
-package com.byrbbs.sdk.utils;
+package cn.byrbbs.sdk.utils;
 
 import java.io.IOException;
 import java.io.InputStream;

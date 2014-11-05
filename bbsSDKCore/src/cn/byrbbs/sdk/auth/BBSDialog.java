@@ -1,4 +1,4 @@
-package com.byrbbs.sdk.auth;
+package cn.byrbbs.sdk.auth;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -14,12 +14,13 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.RelativeLayout;
 
-import com.byrbbs.sdk.exception.BBSAuthException;
-import com.byrbbs.sdk.exception.BBSDialogException;
-import com.byrbbs.sdk.utils.LogUtil;
-import com.byrbbs.sdk.utils.NetworkHelper;
-import com.byrbbs.sdk.utils.ResourceManager;
-import com.byrbbs.sdk.utils.Utility;
+import cn.byrbbs.sdk.exception.BBSAuthException;
+import cn.byrbbs.sdk.exception.BBSDialogException;
+import cn.byrbbs.sdk.utils.LogUtil;
+import cn.byrbbs.sdk.utils.NetworkHelper;
+import cn.byrbbs.sdk.utils.ResourceManager;
+import cn.byrbbs.sdk.utils.Utility;
+
 
 public class BBSDialog extends Dialog {
 

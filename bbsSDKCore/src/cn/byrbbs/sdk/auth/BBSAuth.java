@@ -1,13 +1,15 @@
-package com.byrbbs.sdk.auth;
+package cn.byrbbs.sdk.auth;
 
 import android.content.Context;
 import android.os.Bundle;
 
-import com.byrbbs.sdk.net.BBSParameters;
-import com.byrbbs.sdk.utils.LogUtil;
-import com.byrbbs.sdk.utils.NetworkHelper;
-import com.byrbbs.sdk.utils.ResourceManager;
-import com.byrbbs.sdk.utils.UIUtils;
+import cn.byrbbs.sdk.net.BBSParameters;
+import cn.byrbbs.sdk.utils.LogUtil;
+import cn.byrbbs.sdk.utils.NetworkHelper;
+import cn.byrbbs.sdk.utils.ResourceManager;
+import cn.byrbbs.sdk.utils.UIUtils;
+import cn.byrbbs.sdk.utils.Utility;
+
 
 public class BBSAuth {
 	public static final String TAG = "bbsAuth_login";
@@ -92,7 +94,7 @@ public class BBSAuth {
 		
 		// package name and app signature
 		private String pkgName = "";
-		private String keyHash = "123";
+		private String keyHash = "";
 		
 		private Bundle mBundle = null;
 		
@@ -106,7 +108,7 @@ public class BBSAuth {
 			// get package name from context
 			this.pkgName = context.getPackageName();
 			
-			// TODO this.keyHash = 
+			this.keyHash = Utility.getSign(context, this.pkgName);
 			
 			initAuthBundle();
 		}

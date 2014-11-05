@@ -1,4 +1,4 @@
-package com.byrbbs.sdk.net;
+package cn.byrbbs.sdk.net;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -42,8 +42,8 @@ import org.apache.http.params.HttpProtocolParams;
 
 import android.graphics.Bitmap;
 
-import com.byrbbs.sdk.exception.BBSException;
-import com.byrbbs.sdk.exception.BBSHttpException;
+import cn.byrbbs.sdk.exception.BBSException;
+import cn.byrbbs.sdk.exception.BBSHttpException;
 
 class HttpManager
 {
