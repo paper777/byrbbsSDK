@@ -1,6 +1,7 @@
 # ReadMe
 
 # 概述
+
 基于北邮人论坛新版authorization、API 编写的Android平台SDK。 为第三方开发者应用开发提供了简单易用的解决方案，第三方开发者无需了解[OAuth2.0][1]的复杂机制即可完成论坛授权，并提供开放API接口的服务：）
 ------
 
@@ -37,7 +38,7 @@ public interface Constants {
      * 应用的回调页。
      * 建议使用默认回调页：http://bbs.byr.cn/Oauth2/callback
      */
-    public static final String REDIRECT_URL = "ttp://bbs.byr.cn/Oauth2/callback";
+    public static final String REDIRECT_URL = "http://bbs.byr.cn/Oauth2/callback";
 
     /**
      * 应用对应的权限，设置成空即获取用户的详细信息。
@@ -52,7 +53,7 @@ public interface Constants {
 ### 2. 创建Auth对象
 ```java
 mBBSAuth = new BBSAuth(this, Constants.APP_KEY, Constants.REDIRECT_URL, Constants.SCOPE);
-
+```
 ### 3. 实现BBSAuthListener接口
 
 ```java
