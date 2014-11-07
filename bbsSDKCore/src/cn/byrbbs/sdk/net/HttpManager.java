@@ -227,7 +227,7 @@ class HttpManager
 					e.printStackTrace();
 				}
 		}
-			}
+	}
 
 	private static String getBoundry() {
 		StringBuffer sb = new StringBuffer();

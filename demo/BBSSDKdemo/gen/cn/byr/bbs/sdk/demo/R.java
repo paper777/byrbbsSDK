@@ -16,6 +16,10 @@ public final class R {
         public static final int abc_slide_out_bottom=0x7f040004;
         public static final int abc_slide_out_top=0x7f040005;
     }
+    public static final class array {
+        public static final int section_func_list=0x7f0c0001;
+        public static final int user_func_list=0x7f0c0000;
+    }
     public static final class attr {
         /**  Custom divider drawable to use for elements in the action bar. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
@@ -1091,9 +1095,11 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f070016;
         public static final int action_menu_presenter=0x7f070017;
         public static final int action_mode_close_button=0x7f070024;
-        public static final int action_settings=0x7f070041;
+        public static final int action_settings=0x7f070043;
         public static final int activity_chooser_view_content=0x7f070025;
         public static final int always=0x7f07000b;
+        public static final int api_func_list=0x7f070042;
+        public static final int api_list=0x7f070041;
         public static final int beginning=0x7f070011;
         public static final int checkbox=0x7f07002d;
         public static final int collapseActionView=0x7f07000d;
@@ -1199,10 +1205,12 @@ containing a value of this type.
         public static final int abc_simple_decor=0x7f030017;
         public static final int activity_auth=0x7f030018;
         public static final int activity_main=0x7f030019;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001a;
+        public static final int activity_openapi=0x7f03001a;
+        public static final int openapi_item=0x7f03001b;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001c;
     }
     public static final class menu {
-        public static final int main=0x7f0c0000;
+        public static final int main=0x7f0d0000;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1247,14 +1255,14 @@ containing a value of this type.
         public static final int abc_shareactionprovider_share_with_application=0x7f05000c;
         public static final int action_settings=0x7f05000e;
         public static final int app_name=0x7f050000;
-        public static final int bbsDemo_oauth_canceled=0x7f050016;
-        public static final int bbsDemo_oauth_failed=0x7f050015;
+        public static final int bbsDemo_oauth_canceled=0x7f050017;
+        public static final int bbsDemo_oauth_failed=0x7f050016;
         /**   oauth result string 
          */
-        public static final int bbsDemo_oauth_success=0x7f050014;
-        public static final int bbsDemo_token_has_existed=0x7f050019;
-        public static final int bbsDemo_token_to_string_format=0x7f050017;
-        public static final int bbsDemo_token_to_string_format_1=0x7f050018;
+        public static final int bbsDemo_oauth_success=0x7f050015;
+        public static final int bbsDemo_token_has_existed=0x7f05001a;
+        public static final int bbsDemo_token_to_string_format=0x7f050018;
+        public static final int bbsDemo_token_to_string_format_1=0x7f050019;
         /**  main activity features 
          */
         public static final int bbsSDK_feature_oauth=0x7f05000f;
@@ -1263,6 +1271,7 @@ containing a value of this type.
         /**  oauth acitvity (web auth) 
          */
         public static final int bbsSDK_obtain_token_via_web=0x7f050011;
+        public static final int bbsSDK_token_empty=0x7f050014;
         public static final int bbsSDK_token_info=0x7f050012;
     }
     public static final class style {

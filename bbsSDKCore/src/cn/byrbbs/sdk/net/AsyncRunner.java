@@ -4,10 +4,10 @@ import android.os.AsyncTask;
 
 import cn.byrbbs.sdk.exception.BBSException;
 import cn.byrbbs.sdk.exception.BBSHttpException;
+import cn.byrbbs.sdk.utils.LogUtil;
 
 public class AsyncRunner {
 
-	
 	public static String request(String url, BBSParameters params, String httpMethod)
 			throws BBSException, BBSHttpException {
 		return HttpManager.openUrl(url, httpMethod, params);
@@ -15,6 +15,7 @@ public class AsyncRunner {
 
 	public static void requestAsync(String url, BBSParameters params, 
 			String httpMethod, RequestListener listener) {
+		LogUtil.i("ASYNC", url);
 		new RequestRunner(url, params, httpMethod, listener).execute(new Void[1]);
 	}
 

@@ -14,6 +14,7 @@
     <string name="bbsSDK_obtain_token_via_web">Web authorization</string>
     <string name="bbsSDK_token_info">TOKEN information</string>
     <string name="bbsSDK_obtain_token_hint">Hint</string>
+    <string name="bbsSDK_token_empty">access token is empty</string>
     
     <!--  oauth result string -->
     <string name="bbsDemo_oauth_success">Oauth success</string>
@@ -22,5 +23,7 @@
     <string name="bbsDemo_token_to_string_format">Token：%1$s \nexpires_in：%2$s</string>
     <string name="bbsDemo_token_to_string_format_1">Token：%1$s \nexpires_in：%2$s \nrefresh_token: %3$s</string>
     <string name="bbsDemo_token_has_existed">Token has existed, do not need to log in again</string>
+    
+    
 
 </resources>

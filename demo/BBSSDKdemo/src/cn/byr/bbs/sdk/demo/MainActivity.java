@@ -1,6 +1,7 @@
 package cn.byr.bbs.sdk.demo;
 
 import cn.byr.bbs.sdk.demo.R;
+import cn.byr.bbs.sdk.demo.openAPI.OpenAPIActivity;
 
 import android.content.Intent;
 import android.os.Bundle;

@@ -23,7 +23,13 @@
             </intent-filter>
         </activity>
         
+        <!-- main -->
         <activity android:name="cn.byr.bbs.sdk.demo.AuthActivity" />
+        <activity android:name="cn.byr.bbs.sdk.demo.openAPI.OpenAPIActivity" />
+        
+        <!-- open API -->
+        <activity android:name="cn.byr.bbs.sdk.demo.openAPI.UserAPIActivity" />
+        <activity android:name="cn.byr.bbs.sdk.demo.openAPI.SectionAPIActivity" />
         
     </application>
 

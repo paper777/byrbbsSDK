@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+	<string-array name="user_func_list">
+        <item>Get currrent user information</item>
+        <item>Query other user\'s information</item>
+    </string-array>
+    
+	<string-array name="section_func_list">
+        <item>Get all root sections </item>
+        <item>Query one section information</item>
+    </string-array>
+</resources>
