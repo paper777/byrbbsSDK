@@ -1,0 +1,10 @@
+package cn.byrbbs.sdk.api;
+
+import cn.byrbbs.sdk.auth.Oauth2AccessToken;
+
+public class MailApi extends BaseApi {
+
+	public MailApi(Oauth2AccessToken accessToken) {
+		super(accessToken);
+
+}
