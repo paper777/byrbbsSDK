@@ -1,14 +1,17 @@
 # ReadMe
+
 ------
 基于北邮人论坛新版authorization、API 编写的Android平台SDK。为第三方开发者应用开发提供了简单易用的解决方案，第三方开发者无需了解[OAuth2.0][1]的复杂机制即可完成论坛授权，并提供开放API接口的服务
+
 ------
 
 # Features
-	- [北邮人论坛][2]的开放授权，基于[OAuth2.0][1]中client-side模式
-	- 封装了北邮人论坛API2.0的各个接口
+- [北邮人论坛][2]的开放授权，基于[OAuth2.0][1]中client-side模式
+- 封装了北邮人论坛API2.0的各个接口
 
 # About Demo
-	为OAuth与API调用提供了简单的示例，<b>请务必下载后不要更改签名，否则会导致授权失败！</b>
+
+	为OAuth与API调用提供了简单的示例，** 请务必下载后不要更改签名，否则会导致授权失败！**
 
 # Usage
 
@@ -132,7 +135,10 @@ class AuthListener implements BBSAuthListener {
 ```
 ------
 如有错误、bug等请移步[这里][4]，欢迎pull request!
-Special Thanks [@dss886][3] for contributions(API model) to this projects
+
+------
+Special Thanks to [@dss886][3] for contributions(API model) to this projects
+
 -----
 [1]:http://http://oauth.net/2/
 [2]:http://bbs.byr.cn
