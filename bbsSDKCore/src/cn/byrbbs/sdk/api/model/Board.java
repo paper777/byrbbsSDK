@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 package cn.byrbbs.sdk.api.model;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,49 +22,49 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * 鐗堥潰缁撴�?�浣�?
+ * 版面结构体
  * @author dss886
  * @since 2014-9-7
  */
 public class Board {
 	
-	/** 鐗堥潰鍚嶇�? */
+	/** 版面名称 */
 	public String name;
-	/** 鐗堜富鍒楄�?�锛屼互绌烘牸鍒嗛殧鍚勪釜id */
+	/** 版主列表，以空格分隔各个id */
 	public String manager;
-	/** 鐗堥潰鎻忚堪 */
+	/** 版面描述 */
 	public String description;
-	/** 鐗堥潰鎵�灞炵被鍒� */
+	/** 版面所属类别 */
 	public String classify;
-	/** 鐗堥潰鎵�灞炲垎鍖哄�? */
+	/** 版面所属分区号 */
 	public String section;
-	/** 浠婃棩鍙戞枃鎬绘�? */
+	/** 今日发文总数 */
 	public int post_today_count;
-	/** 鐗堥潰涓婚鎬绘�? */
+	/** 版面主题总数 */
 	public int post_threads_count;
-	/** 鐗堥潰鏂囩珷鎬绘�? */
+	/** 版面文章总数 */
 	public int post_all_count;
-	/** 鐗堥潰鏄惁鍙�? */
+	/** 版面是否只读 */
 	public boolean is_read_only;
-	/** 鐗堥潰鏄惁涓嶅彲鍥炲 */
+	/** 版面是否不可回复 */
 	public boolean is_no_reply;
-	/** 鐗堥潰涔�?惁鍏佽闄勪�? */
+	/** 版面书否允许附件 */
 	public boolean allow_attachment;
-	/** 鐗堥潰鏄惁鍏佽鍖垮悕鍙戞�? */
+	/** 版面是否允许匿名发文 */
 	public boolean allow_anonymous;
-	/** 鐗堥潰鏄惁鍏佽杞俊 */
+	/** 版面是否允许转信 */
 	public boolean allow_outgo;
-	/** 褰撳墠鐧婚檰鐢ㄦ埛鏄惁鏈夊彂鏂�?/鍥炲鏉冮檺 */
+	/** 当前登陆用户是否有发文/回复权限 */
 	public boolean allow_post;
-	/** 鐗堥潰褰撳墠鍦ㄧ嚎鐢ㄦ埛鏁� */
+	/** 版面当前在线用户数 */
 	public int user_online_count;
-	/** 鐗堥潰鍘嗗彶鏈�澶у湪绾跨敤鎴锋暟 */
+	/** 版面历史最大在线用户数 */
 	public int user_online_max_count;
-	/** 鐗堥潰鍘嗗彶鏈�澶у湪绾跨敤鎴锋暟鍙戠敓鏃堕棿 */
+	/** 版面历史最大在线用户数发生时间 */
 	public int user_online_max_time;
-	/** 褰撳墠鐗堥潰妯�?�紡鎵�鍖呭惈鐨勬枃绔犲厓鏁扮粍 */
+	/** 当前版面模式所包含的文章元数组 */
 	public Pagination pagination;
-	/** 褰撳墠鐗堥潰妯�?�紡鐨勫垎椤典俊鎭� */
+	/** 当前版面模式的分页信息 */
 	public List<Article> articles = new ArrayList<Article>();
 	
 	public static Board parse(String jsonString) {
@@ -107,7 +106,6 @@ public class Board {
         		board.articles.add(Article.parse(jsonArticles.optJSONObject(i)));
         	}
         }
-        
         board.pagination = Pagination.parse(jsonObject.optJSONObject("pagination"));
         return board;
 	}

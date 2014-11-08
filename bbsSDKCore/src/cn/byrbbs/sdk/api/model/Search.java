@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 package cn.byrbbs.sdk.api.model;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,25 +23,25 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * 鎼滅储缁撴灉缁撴瀯浣�?
+ * 搜索结果结构体
  * @author dss886
  * @since 2014-9-7
  */
 public class Search {
 
 	/** 
-	 * 褰撳墠鎼滅储缁撴灉鎵�鍖呭惈鐨勫垎鍖虹洰褰曞悕鏁扮粍
-	 * 浠呭瓨鍦ㄤ簬/search/:board涓�
+	 * 当前搜索结果所包含的分区目录名数组
+	 * 仅存在于/search/:board中
 	 *  */
 	public List<Section> sections = new ArrayList<Section>();
 	/** 
-	 * 褰撳墠鎼滅储缁撴灉鎵�鍖呭惈鐨勭増闈㈠厓鏁版嵁鏁扮粍
-	 * 浠呭瓨鍦ㄤ簬/search/:board涓�
+	 * 当前搜索结果所包含的版面元数据数组
+	 * 仅存在于/search/:board中
 	 *  */
 	public List<Board> boards = new ArrayList<Board>();
-	/** 褰撳墠鎼滅储缁撴灉鎵�鍖呭惈鐨勬枃绔犲厓鏁扮�? */
+	/** 当前搜索结果所包含的文章元数组 */
 	public List<Article> articles = new ArrayList<Article>();
-	/** 褰撳墠鎼滅储缁撴灉鍒嗛�?�淇℃伅 */
+	/** 当前搜索结果分页信息 */
 	public Pagination pagination;
 	
 	public static Search parse(String jsonString) {
@@ -60,21 +61,29 @@ public class Search {
         }
         Search search = new Search();
         JSONArray jsonSections = jsonObject.optJSONArray("section");
-        for(int i = 0; i < jsonSections.length(); i++){
-        	search.sections.add(Section.parse(jsonSections.optJSONObject(i)));
-		}
+        if(jsonSections != null){
+        	for(int i = 0; i < jsonSections.length(); i++){
+        		search.sections.add(Section.parse(jsonSections.optJSONObject(i)));
+        	}
+        }
         JSONArray jsonBoards = jsonObject.optJSONArray("board");
-        for(int i = 0; i < jsonBoards.length(); i++){
-        	search.boards.add(Board.parse(jsonBoards.optJSONObject(i)));
-		}
+        if(jsonBoards != null){
+        	for(int i = 0; i < jsonBoards.length(); i++){
+        		search.boards.add(Board.parse(jsonBoards.optJSONObject(i)));
+        	}
+        }
         JSONArray jsonArticles = jsonObject.optJSONArray("article");
-        for(int i = 0; i < jsonArticles.length(); i++){
-        	search.articles.add(Article.parse(jsonArticles.optJSONObject(i)));
-		}
+        if(jsonArticles != null){
+        	for(int i = 0; i < jsonArticles.length(); i++){
+        		search.articles.add(Article.parse(jsonArticles.optJSONObject(i)));
+        	}
+        }
         JSONArray jsonThreads = jsonObject.optJSONArray("threads");
-        for(int i = 0; i < jsonThreads.length(); i++){
-        	search.articles.add(Article.parse(jsonThreads.optJSONObject(i)));
-		}
+        if(jsonThreads != null){
+        	for(int i = 0; i < jsonThreads.length(); i++){
+        		search.articles.add(Article.parse(jsonThreads.optJSONObject(i)));
+        	}
+        }
         search.pagination = Pagination.parse(jsonObject.optJSONObject("pagination"));
         return search;
 	}

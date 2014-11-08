@@ -30,7 +30,15 @@
         <!-- open API -->
         <activity android:name="cn.byr.bbs.sdk.demo.openAPI.UserAPIActivity" />
         <activity android:name="cn.byr.bbs.sdk.demo.openAPI.SectionAPIActivity" />
-        
+        <activity android:name="cn.byr.bbs.sdk.demo.openAPI.BoardAPIActivity" />
+        <activity android:name="cn.byr.bbs.sdk.demo.openAPI.ArticleAPIActivity" />
+        <activity android:name="cn.byr.bbs.sdk.demo.openAPI.AttachmentAPIActivity" />
+        <activity android:name="cn.byr.bbs.sdk.demo.openAPI.MailAPIActivity" />
+        <activity android:name="cn.byr.bbs.sdk.demo.openAPI.FavAPIActivity" />
+        <activity android:name="cn.byr.bbs.sdk.demo.openAPI.SearchAPIActivity" />
+        <activity android:name="cn.byr.bbs.sdk.demo.openAPI.ReferAPIActivity" />
+        <activity android:name="cn.byr.bbs.sdk.demo.openAPI.WidgetAPIActivity" />
+        <activity android:name="cn.byr.bbs.sdk.demo.openAPI.VoteAPIActivity" />
     </application>
 
         <!--  permissions -->

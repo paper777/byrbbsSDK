@@ -53,7 +53,6 @@ public class SectionAPIActivity extends Activity implements OnItemClickListener{
 		            if (!TextUtils.isEmpty(response)) {
 		                LogUtil.i(TAG, response);
 		                
-		                new Section();
 						Section section = Section.parse(response);
 		                if (section != null) {
 		                    Toast.makeText(SectionAPIActivity.this, 

@@ -30,14 +30,15 @@ public class OpenAPIActivity extends Activity implements OnItemClickListener {
         sAPIList.put("用户接口 - UserQueryApi",    "UserAPIActivity");
         sAPIList.put("分区接口- SectionApi",       "SectionAPIActivity");
         sAPIList.put("版面接口 - BoardApi",     	"BoardAPIActivity");
-        sAPIList.put("文章接口 - UserQueryApi",    "UserQuertAPIActivity");
-        sAPIList.put("文章接口 - UserQueryApi",    "UserQuertAPIActivity");
-        sAPIList.put("附件接口 - UserQueryApi",    "UserQuertAPIActivity");
-        sAPIList.put("收藏夹接口 - UserQueryApi",    "UserQuertAPIActivity");
-        sAPIList.put("提醒接口 - UserQueryApi",    "UserQuertAPIActivity");
-        sAPIList.put("Widget接口  - UserQueryApi",    "UserQuertAPIActivity");
-        sAPIList.put("黑名单接口 - UserQueryApi",    "UserQuertAPIActivity");
-        sAPIList.put("投票接口 - UserQueryApi",    "UserQuertAPIActivity");
+        sAPIList.put("文章接口 - ArticleApi",       "ArticleAPIActivity");
+        sAPIList.put("附件接口 - AttachmentApi",    "AttachmentAPIActivity");
+        sAPIList.put("信件接口 - MailApi",    		"MailAPIActivity");
+        sAPIList.put("收藏夹接口 - FavApi",    		"FavAPIActivity");
+        sAPIList.put("搜索接口 - SearchApi",    	"SearchAPIActivity");
+        sAPIList.put("提醒接口 - ReferApi",    		"ReferAPIActivity");
+        sAPIList.put("Widget接口  - WidgetApi",    "WidgetAPIActivity");
+        sAPIList.put("黑名单接口 - BlacklistApi",    "BlacklistAPIActivity");
+        sAPIList.put("投票接口 - VoteApi",    		"VoteAPIActivity");
     }
     
     private ListView mApiListView;

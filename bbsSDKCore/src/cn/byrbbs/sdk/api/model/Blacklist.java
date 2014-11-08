@@ -23,15 +23,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * 榛戝悕鍗曠粨鏋勪�?
+ * 黑名单结构体
  * @author dss886
  * @since 2014-9-7
  */
 public class Blacklist {
 	
-	/** 榛戝悕鍗曠敤鎴风殑鐢ㄦ埛鍏冩暟缁�? */
+	/** 黑名单用户的用户元数组 */
 	public List<User> users = new ArrayList<User>();
-	/** 榛戝悕鍗曞垪琛ㄥ垎椤典俊鎭� */
+	/** 黑名单列表分页信息 */
 	public Pagination pagination;
 	
 	public static Blacklist parse(String jsonString) {

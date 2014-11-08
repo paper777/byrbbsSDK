@@ -14,31 +14,32 @@
  * limitations under the License.
  */
 package cn.byrbbs.sdk.api.model;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * 闄勪欢鏂囦欢缁撴瀯浣�?
+ * 附件文件结构体
  * @author dss886
  * @since 2014-9-7
  */
-public class File {
+public class FileMeta {
 	
-	/** 鏂囦欢鍚�? */
+	/** 文件名 */
 	public String name;
-	/** 鏂囦欢閾炬帴锛屽湪鐢ㄦ埛绌洪棿鐨勬枃浠讹紝璇ュ�间负绌� */
+	/** 文件链接，在用户空间的文件，该值为空 */
 	public String url;
-	/** 鏂囦欢澶у�? */
+	/** 文件大小 */
 	public String size;
-	/** 灏忕缉鐣ュ浘閾炬�?(瀹藉�?120px)锛岀敤鎴风┖闂寸殑鏂囦欢锛岃鍊间负绌� */
+	/** 小缩略图链接(宽度120px)，用户空间的文件，该值为空 */
 	public String thumbnail_small;
-	/** 涓缉鐣ュ浘閾炬�?(瀹藉�?240px)锛岀敤鎴风┖闂寸殑鏂囦欢锛岃鍊间负绌� */
+	/** 中缩略图链接(宽度240px)，用户空间的文件，该值为空 */
 	public String thumbnail_middle;
 	
-	public static File parse(String jsonString) {
+	public static FileMeta parse(String jsonString) {
         try {
             JSONObject jsonObject = new JSONObject(jsonString);
-            return File.parse(jsonObject);
+            return FileMeta.parse(jsonObject);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -46,11 +47,11 @@ public class File {
         return null;
     }
 	
-	public static File parse(JSONObject jsonObject) {
+	public static FileMeta parse(JSONObject jsonObject) {
         if (null == jsonObject) {
             return null;
         }
-        File file = new File();
+        FileMeta file = new FileMeta();
         file.name = jsonObject.optString("name", "");
         file.url = jsonObject.optString("url", "");
         file.size = jsonObject.optString("size", "");

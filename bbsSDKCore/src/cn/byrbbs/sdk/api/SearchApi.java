@@ -48,21 +48,21 @@ public class SearchApi extends BaseApi {
 	public void threadByTitle(String board, 
 			String title1, String title2, String titlen, 
 			RequestListener listener){
-		if(board == null || TextUtils.isEmpty(board)) return;
+		if(title1 == null || board == null || TextUtils.isEmpty(board)) return;
 		BBSParameters param = new BBSParameters();
 		param.put("board", board);
 		if(TextUtils.isEmpty(title1)){
 			param.put("title1", title1);
 		}
-		if(TextUtils.isEmpty(title2)){
+		if(title2 != null && TextUtils.isEmpty(title2)){
 			param.put("title2", title2);
 		}
 		
-		if(TextUtils.isEmpty(titlen)){
+		if(titlen != null && TextUtils.isEmpty(titlen)){
 			param.put("titlen", titlen);
 		}
 		
-		String url = SR_URL + "/threads";
+		String url = SR_URL + "threads";
 		asyncRequest(url, HTTP_GET, param, listener);
 	}
 	
@@ -80,7 +80,7 @@ public class SearchApi extends BaseApi {
 		param.put("board", board);
 		param.put("author", author);
 		
-		String url = SR_URL + "/threads";
+		String url = SR_URL + "threads";
 		asyncRequest(url, HTTP_GET, param, listener);
 	}
 }

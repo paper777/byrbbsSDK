@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 package cn.byrbbs.sdk.api.model;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,53 +23,53 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * 鎻愰啋缁撴�?�浣�?
+ * 提醒结构体
  * @author dss886
  * @since 2014-9-7
  */
 public class Refer {
 	
-	/** 鎻愰啋缂栧彿锛屾缂栧彿鐢ㄤ簬鎻愰啋鐨勭浉鍏虫搷浣� */
+	/** 提醒编号，此编号用于提醒的相关操作 */
 	public int index;
-	/** 鎻愰啋鏂囩珷鐨刬d */
+	/** 提醒文章的id */
 	public int id;
-	/** 鎻愰啋鏂囩珷鐨刧roup id */
+	/** 提醒文章的group id */
 	public int group_id;
-	/** 鎻愰啋鏂囩珷鐨剅eply id */
+	/** 提醒文章的reply id */
 	public int reply_id;
-	/** 鎻愰啋鏂囩珷鎵�鍦ㄧ増闈�? */
+	/** 提醒文章所在版面 */
 	public String board_name;
-	/** 鎻愰啋鏂囩珷鐨勬爣棰�? */
+	/** 提醒文章的标题 */
 	public String title;
-	/** 鎻愰啋鏂囩珷鐨勫彂淇′汉*/
+	/** 提醒文章的发信人*/
 	public User user;
-	/** 鍙戝嚭鎻愰啋鐨勬椂闂�? */
+	/** 发出提醒的时间 */
 	public int time;
-	/** 鎻愰啋鏄惁宸茶�? */
+	/** 提醒是否已读 */
 	public boolean is_read;
 	/** 
-	 * 鎻愰啋绫诲�?�鎻忚堪锛屽寘鎷細@鎴戠殑鏂囩珷锛屽洖澶嶆垜鐨勬枃绔�?
-	 * 浠呭瓨鍦ㄤ笌/refer/:type涓�
+	 * 提醒类型描述，包括：@我的文章，回复我的文章
+	 * 仅存在与/refer/:type中
 	 *  */
 	public String description;
 	/** 
-	 * 褰撳墠鎻愰啋鍒楄〃鎵�鍖呭惈鐨勬彁閱掑厓鏁版嵁鏁扮粍
-	 * 浠呭瓨鍦ㄤ笌/refer/:type涓�
+	 * 当前提醒列表所包含的提醒元数据数组
+	 * 仅存在与/refer/:type中
 	 *  */
 	public List<Refer> refers = new ArrayList<Refer>();
 	/** 
-	 * 褰撳墠鎻愰啋鍒楄〃鐨勫垎椤典俊鎭�?
-	 * 浠呭瓨鍦ㄤ笌/refer/:type涓�
+	 * 当前提醒列表的分页信息
+	 * 仅存在与/refer/:type中
 	 *  */
 	public Pagination pagination;
 	/** 
-	 * 褰撳墠绫诲�?�鐨勬彁閱掓槸鍚�?惎鐢�?
-	 * 浠呭瓨鍦ㄤ笌/refer/:type/info涓�
+	 * 当前类型的提醒是否启用
+	 * 仅存在与/refer/:type/info中
 	 *  */
 	public boolean enable;
 	/** 
-	 * 褰撳墠绫诲�?�鐨勬柊鎻愰啋涓暟
-	 * 浠呭瓨鍦ㄤ笌/refer/:type/info涓�
+	 * 当前类型的新提醒个数
+	 * 仅存在与/refer/:type/info中
 	 *  */
 	public int new_count;
 	
@@ -99,9 +100,11 @@ public class Refer {
         refer.is_read = jsonObject.optBoolean("has_attachment", true);
         refer.description = jsonObject.optString("description", "");
         JSONArray jsonRefers = jsonObject.optJSONArray("article");
-        for(int i = 0; i < jsonRefers.length(); i++){
-        	refer.refers.add(Refer.parse(jsonRefers.optJSONObject(i)));
-		}
+        if(jsonRefers != null){
+        	for(int i = 0; i < jsonRefers.length(); i++){
+        		refer.refers.add(Refer.parse(jsonRefers.optJSONObject(i)));
+        	}
+        }
         refer.pagination = Pagination.parse(jsonObject.optJSONObject("pagination"));
         refer.enable = jsonObject.optBoolean("enable", true);
         refer.new_count = jsonObject.optInt("new_count", -1);

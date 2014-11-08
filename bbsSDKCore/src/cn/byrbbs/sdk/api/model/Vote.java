@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 package cn.byrbbs.sdk.api.model;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,57 +23,57 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * 鎶曠エ缁撴�?�浣�?
+ * 投票结构体
  * @author dss886
  * @since 2014-9-7
  */
 public class Vote {
 	
-	/** 鎶曠エ鏍囪瘑id */
+	/** 投票标识id */
 	public int vid;
-	/** 鎶曠エ鏍囬 */
+	/** 投票标题 */
 	public String title;
-	/** 鎶曠エ鍙戣捣鏃堕棿鎴�? */
+	/** 投票发起时间戳 */
 	public int start;
-	/** 鎶曠エ鎴鏃堕棿鎴�? */
+	/** 投票截止时间戳 */
 	public int end;
-	/** 鎶曠エ鍙備笌鐨勪汉鏁�? */
+	/** 投票参与的人数 */
 	public int user_count;
 	/** 
-	 * 鎶曠エ鎬荤エ鏁�(鎶曠エ绫诲�?�涓哄崟閫夋椂涓巙ser_count鐩哥�?)锛屽鏋滆缃姇绁ㄥ悗鍙涓旇繕娌℃姇绁ㄨ繖涓�间�?-1
-	 * 鍙瓨鍦ㄤ簬/vote/:id涓�
+	 * 投票总票数(投票类型为单选时与user_count相等)，如果设置投票后可见且还没投票这个值为-1
+	 * 只存在于/vote/:id中
 	 *  */
 	public int vote_count;
-	/** 鎶曠エ绫诲�?�锛�?0涓哄崟閫夛紝1涓哄閫�? */
+	/** 投票类型，0为单选，1为多选 */
 	public int type;
-	/** 姣忎釜鐢ㄦ埛鑳芥姇绁ㄦ暟鐨勬渶澶у�硷紝鍙湁褰搕ype涓�1鏃讹紝姝ゅ睘鎬ф湁鏁� */
+	/** 每个用户能投票数的最大值，只有当type为1时，此属性有效 */
 	public int limit;
-	/** 鎶曠エ鎵�鍏宠仈鐨勬姇绁ㄧ増闈㈢殑鏂囩珷id */
+	/** 投票所关联的投票版面的文章id */
 	public int aid;
-	/** 鎶曠エ鏄惁鎴�? */
+	/** 投票是否截止 */
 	public boolean is_end;
-	/** 鎶曠エ鏄惁琚垹闄�? */
+	/** 投票是否被删除 */
 	public boolean is_deleted;
-	/** 鎶曠エ缁撴灉鏄惁鎶曠エ鍚庡彲瑙�? */
+	/** 投票结果是否投票后可见 */
 	public boolean is_result_voted;
-	/** 鎶曠エ鍙戣捣浜虹殑鐢ㄦ埛鍏冩暟鎹�? */
+	/** 投票发起人的用户元数据 */
 	public User user;
-	/** 褰撳墠鐢ㄦ埛鏄惁鎶曠エ */
+	/** 当前用户是否投票 */
 	public boolean is_voted;
-	/** 褰撳墠鐢ㄦ埛鐨勬姇绁ㄦ椂闂达紝鏈姇绁ㄤ�?-1 */
+	/** 当前用户的投票时间，未投票为-1 */
 	public int user_vote_time;
-	/** 褰撳墠鐢ㄦ埛鐨勬姇绁ㄧ粨鏋滐紝鏈姇绁ㄤ负绌烘暟缁� */
+	/** 当前用户的投票结果，未投票为空数组 */
 	public List<VoteOption> user_voted_options = new ArrayList<VoteOption>();
-	/** 鎶曠エ閫夐�?�锛�?敱鎶曠エ閫夐」鍏冩暟鎹粍鎴愮殑鏁扮�? */
+	/** 投票选项，由投票选项元数据组成的数组 */
 	public List<VoteOption> options = new ArrayList<VoteOption>();
 	/** 
-	 * 鎵�鏌ヨ鐨勬姇绁ㄥ垪琛ㄧ殑鎶曠エ鍏冩暟鎹瀯鎴愮殑鏁扮�?
-	 * 鍙瓨鍦ㄤ簬/vote/category/:cate涓�
+	 * 所查询的投票列表的投票元数据构成的数组
+	 * 只存在于/vote/category/:cate中
 	 *  */
 	public List<Vote> votes = new ArrayList<Vote>();
 	/** 
-	 * 褰撳墠鎶曠エ鍒楄〃鐨勫垎椤典俊鎭�?
-	 * 鍙瓨鍦ㄤ簬/vote/category/:cate涓�
+	 * 当前投票列表的分页信息
+	 * 只存在于/vote/category/:cate中
 	 *  */
 	public Pagination pagination;
 	
@@ -106,29 +107,42 @@ public class Vote {
         vote.is_result_voted = jsonObject.optBoolean("is_result_voted", false);
         vote.user = User.parse(jsonObject.optJSONObject("user"));
         JSONArray jsonOptions = jsonObject.optJSONArray("options");
-    	for(int i = 0; i < jsonOptions.length(); i++){
-    		vote.options.add(VoteOption.parse(jsonOptions.optJSONObject(i)));
-    	}
+        if(jsonOptions != null){
+        	for(int i = 0; i < jsonOptions.length(); i++){
+        		vote.options.add(VoteOption.parse(jsonOptions.optJSONObject(i)));
+        	}
+        }
     	JSONArray jsonVotes = jsonObject.optJSONArray("votes");
-        for(int i = 0; i < jsonVotes.length(); i++){
-        	vote.votes.add(Vote.parse(jsonVotes.optJSONObject(i)));
-		}
+    	if(jsonVotes != null){
+    		for(int i = 0; i < jsonVotes.length(); i++){
+    			vote.votes.add(Vote.parse(jsonVotes.optJSONObject(i)));
+    		}
+    	}
         vote.pagination = Pagination.parse(jsonObject.optJSONObject("pagination"));
     	
     	vote.is_voted = jsonObject.optBoolean("voted", true);
-    	if(vote.is_voted){
-    		vote.user_vote_time = jsonObject.optJSONObject("voted").optInt("time", -1);
-    		JSONArray jsonUserVotedOptions = jsonObject.optJSONObject("voted").optJSONArray("viid");
-    		for(int i = 0; i < jsonUserVotedOptions.length(); i++){
-    			try {
-					vote.user_voted_options.add(VoteOption.parse(jsonUserVotedOptions.get(i).toString()));
-				} catch (JSONException e) {
-					e.printStackTrace();
-				}
-    		}
-    	}else{
+    	if(!vote.is_voted){
     		vote.user_vote_time = -1;
-    	}
+    	}else{
+    		JSONObject tmp = jsonObject.optJSONObject("voted");
+    		if(tmp != null){
+    			vote.user_vote_time = tmp.optInt("time", -1);
+    		}
+    		tmp = jsonObject.optJSONObject("voted");
+    		JSONArray jsonUserVotedOptions;
+    		if(tmp != null){
+    			jsonUserVotedOptions = tmp.optJSONArray("viid");
+    		}
+    		if(jsonUserVotedOptions != null){
+    			for(int i = 0; i < jsonUserVotedOptions.length(); i++){
+    				try {
+    					vote.user_voted_options.add(VoteOption.parse(jsonUserVotedOptions.get(i).toString()));
+    				} catch (JSONException e) {
+    					e.printStackTrace();
+    				}
+    			}// for
+    		}//if
+    	}// else
         return vote;
 	}
 }

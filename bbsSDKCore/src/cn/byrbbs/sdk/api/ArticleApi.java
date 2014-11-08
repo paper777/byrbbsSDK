@@ -24,14 +24,14 @@ public class ArticleApi extends BaseApi {
 	 * @param id: valid article id
 	 * @param listener
 	 */
-	public void showArticle(String board, String id, RequestListener listener){
+	public void showArticle(String board, int id, RequestListener listener){
 		if(TextUtils.isEmpty(board) 
-				|| TextUtils.isEmpty(id) 
+				|| id < 0
 				|| listener == null){ 
 			return; 
 		}
 		
-		String url = BASE_URL + board + "/" + id;
+		String url = AR_URL + board + "/" + id;
 		asyncRequest(url, HTTP_GET, null, listener);
 	}
 	
@@ -42,16 +42,16 @@ public class ArticleApi extends BaseApi {
 	 * @param listener
 	 * 
 	 */
-	public void showThread(String board, String id, RequestListener listener
+	public void showThread(String board, int id, RequestListener listener
 			/** params below is not requested*/
 			/*, String au, int count, int page */ ){
 		if(TextUtils.isEmpty(board) 
-				|| TextUtils.isEmpty(id) 
+				|| id <0
 				|| listener == null){ 
 			return; 
 		}
 		
-		String url = BASE_URL + "/thread/" + board + "/" + id;
+		String url = AR_URL + "/thread/" + board + "/" + id;
 		asyncRequest(url, HTTP_GET, null, listener);
 	}
 	
@@ -86,7 +86,7 @@ public class ArticleApi extends BaseApi {
 	 * @param listener
 	 * @param title
 	 * @param content
-	 * @param reid: target article id to reply
+	 * @param reid target article id to reply
 	 */
 	public void reply(String board, RequestListener listener,
 			String title, String content, int reid){ /* content empty is OK.*/
@@ -158,7 +158,7 @@ public class ArticleApi extends BaseApi {
 	/**
 	 * reproduce (cross @apiwiki) an article
 	 * @param board
-	 * @param id: article id
+	 * @param id article id
 	 * @param targetBoard
 	 * @param listener
 	 */

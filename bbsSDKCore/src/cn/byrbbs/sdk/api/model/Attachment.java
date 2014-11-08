@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 package cn.byrbbs.sdk.api.model;
+
 import java.util.ArrayList;
 
 import org.json.JSONArray;
@@ -21,17 +22,17 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * 闄勪欢缁撴�?�浣�?
+ * 附件结构体
  * @author dss886
  * @since 2014-9-7
  */
 public class Attachment {
 	
-	/** 鏂囦欢鍒楄�?? */
-	public ArrayList<File> file = new ArrayList<File>();
-	/** 鍓╀綑绌洪棿澶у皬 */
+	/** 文件列表 */
+	public ArrayList<FileMeta> file = new ArrayList<FileMeta>();
+	/** 剩余空间大小 */
 	public String remain_space;
-	/** 鍓╀綑闄勪欢涓�? */
+	/** 剩余附件个数 */
 	public int remain_count;
 	
 	public static Attachment parse(String jsonString) {
@@ -50,7 +51,7 @@ public class Attachment {
         Attachment att = new Attachment();
         JSONArray jsonFiles = jsonObject.optJSONArray("file");
         for(int i = 0; i < jsonFiles.length(); i++){
-        	att.file.add(File.parse(jsonFiles.optJSONObject(i)));
+        	att.file.add(FileMeta.parse(jsonFiles.optJSONObject(i)));
 		}
         att.remain_space = jsonObject.optString("remain_space", "");
         att.remain_count = jsonObject.optInt("remain_count", -1);

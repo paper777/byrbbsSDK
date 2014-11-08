@@ -36,9 +36,14 @@ public class BBSParameters {
 		this.mParams.put(key, String.valueOf(val));
 	}
 	
+	public void put(String key, java.io.File file){
+		this.mParams.put(key, file);
+	}
+	
 	public void put(String key, Object val){
 		this.mParams.put(key, val.toString());
 	}
+	
 	
 	// getter
 	public Object get(String key) {

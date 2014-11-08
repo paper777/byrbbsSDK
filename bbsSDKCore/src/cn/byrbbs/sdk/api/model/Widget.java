@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 package cn.byrbbs.sdk.api.model;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,19 +23,19 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * Widget缁撴瀯浣�?
+ * Widget结构体
  * @author dss886
  * @since 2014-9-7
  */
 public class Widget {
 
-	/** widget鏍囪�? */
+	/** widget标识 */
 	public String name;
-	/** widget鏍囬�? */
+	/** widget标题 */
 	public String title;
-	/** 涓婃淇敼鏃堕�? */
+	/** 上次修改时间 */
 	public int time;
-	/** 鍗佸ぇ鐑棬璇濋鎵�鍖呭惈鐨勬枃绔犲厓鏁版嵁鏁扮粍 */
+	/** 十大热门话题所包含的文章元数据数组 */
 	public List<Article> articles = new ArrayList<Article>();
 	
 	public static Widget parse(String jsonString) {

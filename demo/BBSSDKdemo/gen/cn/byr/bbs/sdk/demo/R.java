@@ -17,8 +17,18 @@ public final class R {
         public static final int abc_slide_out_top=0x7f040005;
     }
     public static final class array {
+        public static final int article_func_list=0x7f0c0003;
+        public static final int attachment_func_list=0x7f0c0004;
+        public static final int blacklist_func_list=0x7f0c0009;
+        public static final int board_func_list=0x7f0c0002;
+        public static final int fav_func_list=0x7f0c0006;
+        public static final int mail_func_list=0x7f0c0005;
+        public static final int refer_func_list=0x7f0c000b;
+        public static final int search_func_list=0x7f0c0007;
         public static final int section_func_list=0x7f0c0001;
         public static final int user_func_list=0x7f0c0000;
+        public static final int vote_func_list=0x7f0c000a;
+        public static final int widget_func_list=0x7f0c0008;
     }
     public static final class attr {
         /**  Custom divider drawable to use for elements in the action bar. 
@@ -1081,7 +1091,8 @@ containing a value of this type.
         public static final int abc_textfield_searchview_holo_light=0x7f020054;
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
-        public static final int ic_launcher=0x7f020057;
+        public static final int android_robot=0x7f020057;
+        public static final int ic_launcher=0x7f020058;
     }
     public static final class id {
         public static final int action_bar=0x7f07001c;

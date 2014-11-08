@@ -14,21 +14,22 @@
  * limitations under the License.
  */
 package cn.byrbbs.sdk.api.model;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * 鎶曠エ閫夐�?�缁撴�?�浣�?
+ * 投票选项结构体
  * @author dss886
  * @since 2014-9-7
  */
 public class VoteOption {
 	
-	/** 鎶曠エ閫夐�?�鏍囪瘑id */
+	/** 投票选项标识id */
 	public int viid;
-	/** 閫夐」鍐呭 */
+	/** 选项内容 */
 	public String label;
-	/** �?归�夐�?�宸叉姇绁ㄦ暟锛屽鏋滆缃姇绁ㄥ悗鍙涓旇繕娌℃姇绁ㄨ繖涓�间负-1 */
+	/** 改选项已投票数，如果设置投票后可见且还没投票这个值为-1 */
 	public int num;
 	
 	public static VoteOption parse(String jsonString) {

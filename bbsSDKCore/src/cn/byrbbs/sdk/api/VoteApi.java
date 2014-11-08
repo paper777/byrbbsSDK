@@ -19,7 +19,7 @@ public class VoteApi extends BaseApi {
 	
 	/**
 	 * get vote list
-	 * @param category: must be one of below 5
+	 * @param category must be one of below 5
 	 * 		<li> "me"  => current user's vote list</li>
 	 * 		<li> "join" => list of current user's joined </li>
 	 * 		<li> "new" => votes(still open) in reverse<b>(chronological)</b> order list</li>
@@ -27,7 +27,7 @@ public class VoteApi extends BaseApi {
 	 * 		<li> "all" => votes(all) in reverse chronological order list</li>
 	 * @param listener
 	 */
-	public void voteList(String category, RequestListener listener, String user){
+	public void voteList(String category, RequestListener listener){
 		if(!(category.equals("me") 
 				|| category.equals("join")
 				|| category.equals("new")

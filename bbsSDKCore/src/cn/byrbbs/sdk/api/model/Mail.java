@@ -14,42 +14,43 @@
  * limitations under the License.
  */
 package cn.byrbbs.sdk.api.model;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * 淇�?�欢缁撴瀯浣�?
+ * 信件结构体
  * @author dss886
  * @since 2014-9-7
  */
 public class Mail {
 	
-	/** 淇�?�欢缂栧彿锛屾缂栧彿涓�?/mail/:box/:num涓殑num */
+	/** 信件编号，此编号为/mail/:box/:num中的num */
 	public int index;
-	/** 鏄惁鏍囪涓簃 */
+	/** 是否标记为m */
 	public boolean is_m;
-	/** 鏄惁宸茶 */
+	/** 是否已读 */
 	public boolean is_read;
-	/** 鏄惁鍥炲 */
+	/** 是否回复 */
 	public boolean is_reply;
-	/** 鏄惁鏈夐檮浠� */
+	/** 是否有附件 */
 	public boolean has_attachment;
-	/** 淇�?�欢鏍囬�? */
+	/** 信件标题 */
 	public String title;
-	/** 鍙戜俊浜�? */
+	/** 发信人 */
 	public User user;
-	/** 鍙戜俊鏃堕棿 */
+	/** 发信时间 */
 	public int post_time;
-	/** 鎵�灞炰俊绠卞悕 */
+	/** 所属信箱名 */
 	public String box_name;
 	/** 
-	 * 淇�?�欢鍐呭�?
-	 * 鍙瓨鍦ㄤ簬/mail/:box/:num涓�
+	 * 信件内容
+	 * 只存在于/mail/:box/:num中
 	 *  */
 	public String content;
 	/** 
-	 * 淇�?�欢鐨勯檮浠跺垪琛�
-	 * 鍙瓨鍦ㄤ簬/mail/:box/:num涓�
+	 * 信件的附件列表
+	 * 只存在于/mail/:box/:num中
 	 *  */
 	public Attachment attachment;
 	

@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 package cn.byrbbs.sdk.api.model;
+
 import java.util.List;
 
 import org.json.JSONArray;
@@ -21,33 +22,33 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * 鐢ㄦ埛淇＄缁撴瀯浣�?
+ * 用户信箱结构体
  * @author dss886
  * @since 2014-9-7
  */
 public class Mailbox {
 	
-	/** 鏄惁鏈夋柊閭�? */
+	/** 是否有新邮件 */
 	public boolean new_mail;
-	/** 淇＄鏄惁宸叉�? */
+	/** 信箱是否已满 */
 	public boolean full_mail;
-	/** 淇＄宸茬敤绌洪�? */
+	/** 信箱已用空间 */
 	public String space_used;
-	/** 褰撳墠鐢ㄦ埛鏄惁鑳藉彂淇� */
+	/** 当前用户是否能发信 */
 	public boolean can_send;
 	/** 
-	 * 淇＄绫诲�?�鎻忚堪锛屽寘鎷細�?朵欢绠憋紝鍙戜欢绠憋紝搴熺焊绡擄�?
-	 * 浠呭瓨鍦ㄤ簬/mail/:box涓�
+	 * 信箱类型描述，包括：收件箱，发件箱，废纸篓，
+	 * 仅存在于/mail/:box中
 	 *  */
 	public String description;
 	/** 
-	 * 褰撳墠淇＄鎵�鍖呭惈鐨勪俊浠跺厓鏁版嵁鏁扮粍锛�?
-	 * 浠呭瓨鍦ㄤ簬/mail/:box涓�
+	 * 当前信箱所包含的信件元数据数组，
+	 * 仅存在于/mail/:box中
 	 *  */
 	public List<Mail> mails;
 	/** 
-	 * 褰撳墠淇＄鐨勫垎椤典俊鎭�?
-	 * 浠呭瓨鍦ㄤ簬/mail/:box涓�
+	 * 当前信箱的分页信息，
+	 * 仅存在于/mail/:box中
 	 *  */
 	public Pagination pagination;
 	
@@ -73,9 +74,11 @@ public class Mailbox {
         mailbox.can_send = jsonObject.optBoolean("can_send", true);
         mailbox.description = jsonObject.optString("description", "");
         JSONArray jsonMails = jsonObject.optJSONArray("article");
-        for(int i = 0; i < jsonMails.length(); i++){
-        	mailbox.mails.add(Mail.parse(jsonMails.optJSONObject(i)));
-		}
+        if(jsonMails != null){
+        	for(int i = 0; i < jsonMails.length(); i++){
+        		mailbox.mails.add(Mail.parse(jsonMails.optJSONObject(i)));
+        	}
+        }
         mailbox.pagination = Pagination.parse(jsonObject.optJSONObject("pagination"));
         return mailbox;
 	}

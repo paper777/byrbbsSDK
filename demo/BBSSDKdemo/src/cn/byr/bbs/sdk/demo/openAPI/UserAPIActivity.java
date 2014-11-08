@@ -21,7 +21,7 @@ import cn.byrbbs.sdk.net.RequestListener;
 import cn.byrbbs.sdk.utils.LogUtil;
 
 public class UserAPIActivity extends Activity implements OnItemClickListener {
-	private static final String TAG = "USER";
+	private static final String TAG = "USERAPIactivity";
 	
 	private UserApi mUserApi;
 	private Oauth2AccessToken mAccessToken;

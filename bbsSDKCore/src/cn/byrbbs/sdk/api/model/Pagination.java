@@ -14,23 +14,24 @@
  * limitations under the License.
  */
 package cn.byrbbs.sdk.api.model;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * 鍒嗛〉缁撴�?�浣�?
+ * 分页结构体
  * @author dss886
  * @since 2014-9-7
  */
 public class Pagination {
 
-	/** 鎬婚〉鏁�? */
+	/** 总页数 */
 	public int page_all_count;
-	/** 褰撳墠椤垫暟 */
+	/** 当前页数 */
 	public int page_current_count;
-	/** 姣忛〉鍏冪礌涓�? */
+	/** 每页元素个数 */
 	public int item_page_count;
-	/** 鎵�鏈夊厓绱犱釜鏁� */
+	/** 所有元素个数 */
 	public int item_all_count;
 
 	public static Pagination parse(String jsonString) {

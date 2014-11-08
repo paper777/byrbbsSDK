@@ -11,4 +11,79 @@
         <item>Get all root sections </item>
         <item>Query one section information</item>
     </string-array>
+    
+	<string-array name="board_func_list">
+        <item>Get board information</item>
+    </string-array>
+    
+	<string-array name="article_func_list">
+        <item>Get article information</item>
+        <item>Get thread information</item>
+        <item>Post an article</item>
+        <item>forward an article</item>
+        <item>reproduce(cross) an article</item>
+        <item>Update an article</item>
+        <item>reply an article</item>
+        <item>delete an article</item>
+    </string-array>
+        
+	<string-array name="attachment_func_list">
+        <item>Get attachment info</item>
+        <item>Upload attachment</item>
+        <item>Delete attachment</item>
+    </string-array>
+    
+	<string-array name="mail_func_list">
+        <item>Inbox </item>
+        <item>Outbox</item>
+        <item>Trash box</item>
+        <item>show box info(new mail)</item>
+        <item>show one inbox mail</item>
+        <item>send a mail</item>
+        <item>reply a mail in inbox</item>
+        <item>forward a mail in inbox</item>
+        <item>delete a mail in inbox</item>
+    </string-array>
+    
+	
+	<string-array name="fav_func_list">
+        <item>show favorites</item>
+        <item>add favorite</item>
+        <item>delete favorite</item>
+    </string-array>
+    
+	<string-array name="search_func_list">
+	    <item>search board</item>
+	    <item>search thread by title</item>
+	    <item>search thread by author</item>
+	</string-array>
+	
+	<string-array name="widget_func_list">
+	    <item>top 10</item>
+	    <item>recommend top articles</item>
+	    <item>section top articles</item>
+	</string-array>
+	
+	<string-array name="blacklist_func_list">
+	    <item>show list</item>
+	    <item>add "paper777" </item>
+	    <item>delete "paper777"</item>
+	 </string-array>
+	
+	<string-array name="vote_func_list">
+	    <item>show paper777\'s votes</item>
+	    <item>show new hot votes</item>
+	    <!-- TODO -->
+	    <item>vote!</item>
+	</string-array>
+	
+	<string-array name="refer_func_list">
+	    <item>show mentions</item>
+	    <item>show replys</item>
+	    <item>show mention properties</item>
+	    <item>set read a mention</item>
+	    <item>set read all mentions</item>
+	    <item>delete a mention</item>
+	</string-array>
+	    
 </resources>

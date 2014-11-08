@@ -33,7 +33,7 @@ public class AttachmentApi extends BaseApi {
 	/**
 	 * get the information of attachment(s) 
 	 * @param board
-	 * @param id: article id
+	 * @param id article id
 	 * @param attName: attachment name to delete
 	 * @param listener
 	 */
