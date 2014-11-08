@@ -5,6 +5,11 @@ import cn.byrbbs.sdk.auth.Oauth2AccessToken;
 import cn.byrbbs.sdk.net.BBSParameters;
 import cn.byrbbs.sdk.net.RequestListener;
 
+/**
+ * VOTE API
+ * @author ALSO
+ *
+ */
 public class VoteApi extends BaseApi {
 
 	private String VOTE_URL = BASE_URL + "/vote/";
@@ -35,6 +40,11 @@ public class VoteApi extends BaseApi {
 		asyncRequest(url, HTTP_GET, null, listener);
 	}
 	
+	/**
+	 * query sb's vote history
+	 * @param userid
+	 * @param listener
+	 */
 	public void queryVoteList(String userid, RequestListener listener){
 		if(TextUtils.isEmpty(userid)){ return; }
 		String url = VOTE_URL + "category/list";
@@ -44,6 +54,13 @@ public class VoteApi extends BaseApi {
 		asyncRequest(url, HTTP_GET, param, listener);
 		
 	}
+	
+	/**
+	 * Vote
+	 * @param vid
+	 * @param viid
+	 * @param listener
+	 */
 	public void vote(int vid, int[] viid, RequestListener listener){
 		if(viid.length == 0){ return; }
 		BBSParameters param = new BBSParameters();
