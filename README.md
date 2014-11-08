@@ -1,8 +1,5 @@
 # ReadMe
-
-# 概述
-
-基于北邮人论坛新版authorization、API 编写的Android平台SDK。 为第三方开发者应用开发提供了简单易用的解决方案，第三方开发者无需了解[OAuth2.0][1]的复杂机制即可完成论坛授权，并提供开放API接口的服务：）
+	基于北邮人论坛新版authorization、API 编写的Android平台SDK。为第三方开发者应用开发提供了简单易用的解决方案，第三方开发者无需了解[OAuth2.0][1]的复杂机制即可完成论坛授权，并提供开放API接口的服务：）
 ------
 
 # 必要术语说明
@@ -16,18 +13,24 @@
 
 ------
 
-# Usage
-## 引用库
-### 1、直接引用 jar 文件
-		- 在 release 目录下下载 .jar 文件
-		- 将 jar 文件放入工程 libs 目录中
-		- 将其引入工程
-###	2、克隆整个仓库
-		- 克隆这个仓库
-		- 将工程导入并将其引入您的工程
-		- 要将lib工程中assets目录中的内容复制到您的工程assets的目录中
+# Features
+	- [北邮人论坛][2]的开放授权，基于[OAuth2.0][1]中client-side模式
+	- 封装了北邮人论坛API2.0的各个接口
 
-## 使用说明
+# About Demo
+	为OAuth与API调用提供了简单的示例，**请下载后不要更改签名，否则会导致授权失败！**
+
+# Usage
+
+### 1、直接引用 jar 文件
+	- 在 release 目录下下载 .jar 文件
+	- 将 jar 文件放入工程 libs 目录中并将其引入工程
+###	2、克隆整个仓库
+	- 克隆这个仓库
+	- 将工程作为librarya引入您的工程
+	- 要将lib工程中assets目录中的内容复制到您的工程assets的目录中，否则无法使用
+
+# Authorization setup
 ### 1. 填写 APP_KEY 等参数
 ```java
 public interface Constants {
@@ -86,4 +89,43 @@ class AuthListener implements BBSAuthListener {
  mBBSAuth.authorize(new AuthListener());
 ```
 
+# API Quick setup
+
+确保在获取了TOKEN之后调用API，否则无法使用
+
+### 1、实例化API类
+```java
+	/** mAccessToken 为Oauth2AccessToken类 
+		不能为空*/
+    mUserApi = new UserApi(mAccessToken);
+```
+
+###2、实现RequestListener接口
+```java
+	private RequestListener mListener = new RequestListener() {
+        @Override
+        public void onComplete(String response) {
+            if (!TextUtils.isEmpty(response)) {
+                /** 解析返回数据 */
+                User user = User.parse(response);
+            }
+        }
+		@Override
+		public void onException(BBSException e) {
+			/** 异常处理 */
+            LogUtil.e(TAG, e.getMessage());
+		}
+    };
+```
+
+### 3、调用API函数
+```java
+	/** 获取授权用户信息 */
+	mUserApi.show(mListener);
+```
+
+## **Special Thanks** [@dss886][3] for contributions(API model) to this projects
+
 [1]:http://http://oauth.net/2/
+[2]:http://bbs.byr.cn
+[3]:https://github.com/dss886
