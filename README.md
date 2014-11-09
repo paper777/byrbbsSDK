@@ -14,12 +14,12 @@
 
 为OAuth与API调用提供了简单的示例，提供了
 - APK 安装包
-- 源代码工程文件，<html><b>请务必使用提供的[debug keystore][https://github.com/paper777/byrbbsSDK/blob/master/bbsSDKkeystore_debug]签名，否则会导致授权失败！</html>
+- 源代码工程文件，<html><b>请务必使用提供的[debug keystore][5]签名，否则会导致授权失败！</html>
 
 # Usage
 
 ### 1、直接引用 jar 文件
-- 在 [release][https://github.com/paper777/byrbbsSDK/tree/master/release] 目录下下载 .jar 文件
+- 在 [release][6] 目录下下载 .jar 文件
 - 将 jar 文件放入工程 libs 目录中并将其引入工程
 
 ###	2、克隆整个仓库
@@ -147,3 +147,5 @@ Special Thanks to [@dss886][3] for contributions(API model) to this projects
 [2]:http://bbs.byr.cn
 [3]:https://github.com/dss886
 [4]:https://github.com/paper777/byrbbsSDK/issues
+[5]:https://github.com/paper777/byrbbsSDK/blob/master/bbsSDKkeystore_debug
+[6]:https://github.com/paper777/byrbbsSDK/tree/master/release
