@@ -129,7 +129,7 @@ public class Vote {
     			vote.user_vote_time = tmp.optInt("time", -1);
     		}
     		tmp = jsonObject.optJSONObject("voted");
-    		JSONArray jsonUserVotedOptions;
+    		JSONArray jsonUserVotedOptions = null;
     		if(tmp != null){
     			jsonUserVotedOptions = tmp.optJSONArray("viid");
     		}

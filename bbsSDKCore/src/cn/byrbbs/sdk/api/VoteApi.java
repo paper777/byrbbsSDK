@@ -58,16 +58,22 @@ public class VoteApi extends BaseApi {
 	/**
 	 * Vote
 	 * @param vid
-	 * @param viid
+	 * @param viid array of vote options
+	 * @param isMulti true=>multiple choice
 	 * @param listener
 	 */
-	public void vote(int vid, int[] viid, RequestListener listener){
+	public void vote(int vid, int[] viid, boolean isMulti, RequestListener listener){
 		if(viid.length == 0){ return; }
 		BBSParameters param = new BBSParameters();
-		// TODO
-		param.put("vote", viid);
+		if(!isMulti){
+			param.put("vote", viid[0]);
+		}else if(viid.length > 0){
+			for(int i = 0; i < viid.length; i++){
+				param.put("vote[" + i + "]", viid[i] + "");
+			}
+		} else { return; } 
 		String url = VOTE_URL + vid;
-		asyncRequest(url, HTTP_GET, param, listener);
+		asyncRequest(url, HTTP_POST, param, listener);
 		
 	}
 

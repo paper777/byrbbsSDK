@@ -1,7 +1,6 @@
 package cn.byrbbs.sdk.net;
 
 import android.os.AsyncTask;
-
 import cn.byrbbs.sdk.exception.BBSException;
 import cn.byrbbs.sdk.exception.BBSHttpException;
 import cn.byrbbs.sdk.utils.LogUtil;
@@ -54,15 +53,21 @@ public class AsyncRunner {
 			this.mListener = listener;
 		}
 
-		protected AsyncRunner.AsyncTaskResult<String> doInBackground(Void[] params) {
-			try {
-				String result = HttpManager.openUrl(this.mUrl, this.mHttpMethod, this.mParams);
-				return new AsyncRunner.AsyncTaskResult(result);
-			} catch (BBSHttpException e) {
-				return new AsyncRunner.AsyncTaskResult(e);
-			}
-	
-		}
+
+	    @SuppressWarnings({ "rawtypes", "unchecked" })
+		protected AsyncRunner.AsyncTaskResult<String> doInBackground(Void[] params)
+	    {
+	      try {
+	        String result = HttpManager.openUrl(this.mUrl, this.mHttpMethod, this.mParams);
+	        return new AsyncRunner.AsyncTaskResult(result);
+	      }
+	      catch (BBSException e) {
+	        return new AsyncRunner.AsyncTaskResult(e);
+	      } catch (BBSHttpException e) {
+	    	  e.printStackTrace();
+	      }
+		return null;
+	    }
 
 		protected void onPreExecute() { }
 

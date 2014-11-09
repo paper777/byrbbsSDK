@@ -22,8 +22,11 @@ import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpVersion;
+import org.apache.http.NoHttpResponseException;
 import org.apache.http.StatusLine;
+import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.HttpRequestRetryHandler;
 import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
@@ -39,9 +42,10 @@ import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 import org.apache.http.params.HttpProtocolParams;
+import org.apache.http.protocol.HttpContext;
 
+import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
-
 import cn.byrbbs.sdk.exception.BBSException;
 import cn.byrbbs.sdk.exception.BBSHttpException;
 
@@ -57,6 +61,7 @@ class HttpManager
 
 	private static final int CONNECTION_TIMEOUT = 5000;
 	private static final int SOCKET_TIMEOUT = 20000;
+	
 	private static final int BUFFER_SIZE = 8192;
 	private static org.apache.http.conn.ssl.SSLSocketFactory sSSLSocketFactory;
 
@@ -77,16 +82,16 @@ class HttpManager
 			ByteArrayOutputStream baos = null;
 
 			// select HTTP method
-			if (method.equals("GET")) {
+			if (method.equals(HTTP_METHOD_GET)) {
 				url = url + "?" + params.encodeUrl();
 				request = new HttpGet(url);
-			} else if (method.equals("POST")) {
+			} else if (method.equals(HTTP_METHOD_POST)) {
 				HttpPost post = new HttpPost(url);
 				request = post;
 
 				baos = new ByteArrayOutputStream();
 				if (params.hasBinaryData()) {
-					post.setHeader("Content-Type", "multipart/form-data; boundary=" + BOUNDARY);
+					post.setHeader("Content-Type", MULTIPART_FORM_DATA + " boundary=" + BOUNDARY);
 					buildParams(baos, params);
 				} else {
 					Object value = params.get("content-type");
@@ -110,7 +115,6 @@ class HttpManager
 			StatusLine status = response.getStatusLine();
 			int statusCode = status.getStatusCode();
 
-			// TODO
 			if (statusCode != 200) {
 				String result = readRsponse(response);
 				throw new BBSHttpException(result, statusCode);
@@ -127,17 +131,41 @@ class HttpManager
 			HttpParams params = new BasicHttpParams();
 			HttpProtocolParams.setVersion(params, HttpVersion.HTTP_1_1);
 			HttpProtocolParams.setContentCharset(params, "UTF-8");
+			HttpProtocolParams.setUseExpectContinue(params, false);  
 
 			SchemeRegistry registry = new SchemeRegistry();
 			registry.register(new Scheme("http", PlainSocketFactory.getSocketFactory(), 80));
 			registry.register(new Scheme("https", getSSLSocketFactory(), 443));
 
 			ClientConnectionManager ccm = new ThreadSafeClientConnManager(params, registry);
-			HttpConnectionParams.setConnectionTimeout(params, 5000);
-			HttpConnectionParams.setSoTimeout(params, 20000);
-			return new DefaultHttpClient(ccm, params);
+			HttpConnectionParams.setConnectionTimeout(params, CONNECTION_TIMEOUT);
+			HttpConnectionParams.setSoTimeout(params, SOCKET_TIMEOUT);
+			
+			HttpRequestRetryHandler retryHandler = new HttpRequestRetryHandler() {
+				public boolean retryRequest(IOException exception, int executionCount,
+						HttpContext context) {
+					// retry a max of 5 times
+					if(executionCount >= 5){
+						return false;
+					}
+					if(exception instanceof NoHttpResponseException){
+						return true;
+					} else if (exception instanceof ClientProtocolException){
+						return true;
+					} 
+					return false;
+				}
+			};
+			DefaultHttpClient httpClient = defaulthttpclient(ccm, params);
+			httpClient.setHttpRequestRetryHandler(retryHandler);
 		} catch (Exception e) { }
 		return new DefaultHttpClient();
+	}
+
+	private static DefaultHttpClient defaulthttpclient(
+			ClientConnectionManager ccm, HttpParams params) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	private static void buildParams(OutputStream baos, BBSParameters params)
@@ -194,7 +222,7 @@ class HttpManager
 		}
 	}
 
-	private static String readRsponse(HttpResponse response)
+	@SuppressLint("DefaultLocale") private static String readRsponse(HttpResponse response)
 			throws BBSException {
 		if (response == null) {
 			return null;
@@ -211,7 +239,7 @@ class HttpManager
 			}
 
 			int readBytes = 0;
-			byte[] buffer = new byte[8192];
+			byte[] buffer = new byte[BUFFER_SIZE];
 			while ((readBytes = inputStream.read(buffer)) != -1) {
 				content.write(buffer, 0, readBytes);
 			}

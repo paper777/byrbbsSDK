@@ -7,16 +7,17 @@
 
 # Features
 - [北邮人论坛][2]的开放授权，基于[OAuth2.0][1]中client-side模式
-- 封装了北邮人论坛API2.0的各个接口
+- 封装了北邮人论坛API的各个元数据
+- 封装了北邮人论坛API2.0的各个接口，提供了异步请求工具。
 
 # About Demo
 
-	为OAuth与API调用提供了简单的示例，** 请务必下载后不要更改签名，否则会导致授权失败！**
+为OAuth与API调用提供了简单的示例，<html><b>请务必使用提供的[debug keystore][]签名，否则会导致授权失败！</html>
 
 # Usage
 
 ### 1、直接引用 jar 文件
-- 在 release 目录下下载 .jar 文件
+- 在 [release][] 目录下下载 .jar 文件
 - 将 jar 文件放入工程 libs 目录中并将其引入工程
 
 ###	2、克隆整个仓库
