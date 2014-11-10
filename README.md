@@ -140,7 +140,7 @@ class AuthListener implements BBSAuthListener {
 如有错误、bug等请移步[这里][4]，欢迎pull request!
 
 ------
-Special Thanks to [@dss886][3] for contributions(API model) to this projects
+Special Thanks to [@dss886][3] for contributions to this projects
 
 -----
 [1]:http://http://oauth.net/2/
