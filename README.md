@@ -102,7 +102,7 @@ class AuthListener implements BBSAuthListener {
 # API Quick setup
 
 确保在获取了TOKEN之后调用API，否则无法使用
-
+[**详细API接口请查看WIKI**][7]
 ### 1、实例化API类
 
 ```java
@@ -149,3 +149,4 @@ Special Thanks to [@dss886][3] for contributions to this projects
 [4]:https://github.com/paper777/byrbbsSDK/issues
 [5]:https://github.com/paper777/byrbbsSDK/blob/master/bbsSDKkeystore_debug
 [6]:https://github.com/paper777/byrbbsSDK/tree/master/release
+[7]:https://github.com/paper777/byrbbsSDK/wiki/API-home-page
