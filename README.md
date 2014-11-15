@@ -15,6 +15,10 @@
 为OAuth与API调用提供了简单的示例，提供了
 - APK 安装包
 - 源代码工程文件，<html><b>请务必使用提供的[debug keystore][5]签名，否则会导致授权失败！</html>
+# About API 
+
+- usage 部分示例了API 调用的简单步骤。[**详细API接口函数请查看WIKI**][7]
+- API 元数据（write by dss886) 在cn.byrbbs.sdk.api.model下提供
 
 # Usage
 
@@ -140,6 +144,7 @@ class AuthListener implements BBSAuthListener {
 如有错误、bug等请移步[这里][4]，欢迎pull request!
 
 ------
+
 Special Thanks to [@dss886][3] for contributions to this projects
 
 -----
