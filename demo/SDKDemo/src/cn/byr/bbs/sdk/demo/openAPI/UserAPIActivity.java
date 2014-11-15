@@ -1,6 +1,9 @@
 package cn.byr.bbs.sdk.demo.openAPI;
 
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -15,7 +18,6 @@ import cn.byr.bbs.sdk.demo.AccessTokenKeeper;
 import cn.byr.bbs.sdk.demo.R;
 import cn.byrbbs.sdk.api.UserApi;
 import cn.byrbbs.sdk.api.model.User;
-import cn.byrbbs.sdk.api.model.ResponseError;
 import cn.byrbbs.sdk.auth.Oauth2AccessToken;
 import cn.byrbbs.sdk.exception.BBSException;
 import cn.byrbbs.sdk.net.RequestListener;
@@ -56,8 +58,13 @@ public class UserAPIActivity extends Activity implements OnItemClickListener {
             if (!TextUtils.isEmpty(response)) {
                 LogUtil.i(TAG, response);
                 
-                ResponseError error = ResponseError.parse(response);
-                if(error != null){
+                JSONObject jsonObject = null;
+				try {
+					jsonObject = new JSONObject(response);
+				} catch (JSONException e) {
+					e.printStackTrace();
+				}
+                if(jsonObject.has("code")){
                     Toast.makeText(UserAPIActivity.this, "No such id.", 
                             Toast.LENGTH_LONG).show();
                 }
