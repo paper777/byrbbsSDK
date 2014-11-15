@@ -1,6 +1,5 @@
 package cn.byrbbs.sdk.api;
 
-import android.text.TextUtils;
 import cn.byrbbs.sdk.auth.Oauth2AccessToken;
 import cn.byrbbs.sdk.net.RequestListener;
 
@@ -19,7 +18,7 @@ public class WidgetApi extends BaseApi {
 	public static int INFO_SOCIETY 		= 3;
 	public static int HUMANITIES_ART 	= 4;
 	public static int LIFE				= 5;
-	public static int Entertainment 	= 6;
+	public static int ENTERTAINMENT 	= 6;
 	public static int FITNESS 			= 7;
 	public static int GAME 				= 8;
 	public static int HOMETOWN 			= 9;

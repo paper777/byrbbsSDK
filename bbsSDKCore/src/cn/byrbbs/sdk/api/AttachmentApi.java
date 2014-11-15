@@ -18,7 +18,7 @@ public class AttachmentApi extends BaseApi {
 	/**
 	 * get the information of attachment(s) 
 	 * @param board
-	 * @param id: article id
+	 * @param id article id
 	 * @param listener
 	 */
 	public void info(String board, int id, RequestListener listener){
@@ -31,10 +31,10 @@ public class AttachmentApi extends BaseApi {
 	
 	
 	/**
-	 * get the information of attachment(s) 
+	 * delete attachment(s) 
 	 * @param board
 	 * @param id article id
-	 * @param attName: attachment name to delete
+	 * @param attName attachment name to delete
 	 * @param listener
 	 */
 	public void delete(String board, int id, String attName, RequestListener listener){
@@ -50,6 +50,13 @@ public class AttachmentApi extends BaseApi {
 		asyncRequest(url, HTTP_POST, param, listener);
 	}
 	
+	/**
+	 * upload attachment(s) 
+	 * @param board
+	 * @param id article id
+	 * @param file 
+	 * @param listener
+	 */
 	public void upload(String board, int id, RequestListener listener, File file){
 		if(TextUtils.isEmpty(board)){ return; }
 		
@@ -60,11 +67,5 @@ public class AttachmentApi extends BaseApi {
 		String url = ATT_URL + board + "/add/" + id;
 		asyncRequest(url, HTTP_POST, param, listener);
 	}
-	
-	
-	
-	
-	
-	
 
 }

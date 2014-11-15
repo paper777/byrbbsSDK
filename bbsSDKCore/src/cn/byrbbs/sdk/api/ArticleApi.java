@@ -109,7 +109,7 @@ public class ArticleApi extends BaseApi {
 	/**
 	 *  forward an article to someone
 	 * @param board
-	 * @param id: article id
+	 * @param id article id
 	 * @param targetUserid
 	 * @param thread: 
 	 * 			1=> collection the article and then forward
@@ -143,7 +143,7 @@ public class ArticleApi extends BaseApi {
 	/**
 	 * forward an article
 	 * @param board
-	 * @param id: article id
+	 * @param id article id
 	 * @param targetUserid
 	 * @param listener
 	 */

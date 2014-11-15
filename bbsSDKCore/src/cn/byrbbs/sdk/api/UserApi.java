@@ -32,7 +32,6 @@ public class UserApi extends BaseApi {
 	 * query somebody's info.
 	 * @param id:  bbs id 
 	 * @param listener
-	 * @param return_format: 1=> return XML format ELSE return JSON format
 	 */
 	public void query(String id, RequestListener listener){
 		if(TextUtils.isEmpty(id)){

@@ -18,7 +18,7 @@ public class BoardApi extends BaseApi {
 	
 	/**
 	 * get board information
-	 * @param name: valid board name
+	 * @param name valid board name
 	 * @param listener
 	 */
 	public void getBoardInfo(String name, RequestListener listener){

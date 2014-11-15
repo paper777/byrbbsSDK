@@ -25,7 +25,7 @@ public class SearchApi extends BaseApi {
 	
 	/**
 	 * search board
-	 * @param board: board name
+	 * @param board board name
 	 * @param listener
 	 */
 	public void board(String board, RequestListener listener){

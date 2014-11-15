@@ -130,7 +130,7 @@ public class ReferApi extends BaseApi {
 	 * 			<li> "reply" => replied article </li>
 	 * @param listener
 	 */
-	public void deleteALL(String type, RequestListener listener){
+	public void deleteAll(String type, RequestListener listener){
 		if(type.equals("at") || type.equals("reply")){
 			String url = RF_URL + type + "/delete";
 			asyncRequest(url, HTTP_POST, null, listener);

@@ -27,7 +27,7 @@ public class SectionApi extends BaseApi {
 	
 	/**
 	 * get section info(sub section if exited and board)
-	 * @param namea: valid section name
+	 * @param namea valid section name
 	 * @param listener
 	 */
 	public void getSection(String name, RequestListener listener){
