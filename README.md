@@ -150,7 +150,7 @@ Special Thanks to [@dss886][3] for contributions to this projects
 
 -----
 
-      念奴娇·赤壁怀古
+念奴娇·赤壁怀古
 
 大江东去，浪淘尽，千古风流人物。
 
