@@ -39,7 +39,7 @@
 | --------               | :-----  | 
 | AppKey(client_id)      | 分配给每个第三方应用的 app key。用于鉴权身份，显示来源等功能。|
 | RedirectURI            | 第三方应用授权回调页面。这里建议使用默认回调页`http://bbs.byr.cn/Oauth2/callback` |
-| Scope                  | 授权项目，用户在新OAuth2.0[1]授权页中有权利选择赋予应用的功能。| 
+| Scope                  | 授权项目，用户在新[OAuth2.0][1]授权页中有权利选择赋予应用的功能。| 
 | AccessToken            | 表示用户身份的 token，用于 API 的调用。| 
 |
 
