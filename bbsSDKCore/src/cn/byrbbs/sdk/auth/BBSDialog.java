@@ -164,15 +164,15 @@ public class BBSDialog extends Dialog {
 		Bundle values = Utility.parseUrl(url);
 
 		// detect error info  
-		String errorType = values.getString("error");
-		String errorCode = values.getString("error_code");
-		String errorDescription = values.getString("error_description");
+		//String errorType = values.getString("error");
+		//String errorCode = values.getString("error_code");
+		String errorDescription = values.getString("error");
 
 		// get the token information successfully
-		if ((errorType == null) && (errorCode == null)){
+		if (errorDescription == null ){
 			this.mListener.onComplete(values);
 		} else{ 
-			this.mListener.onException(new BBSAuthException(errorCode, errorType, errorDescription));
+			this.mListener.onException(new BBSAuthException(errorDescription));
 		}
 	}
 

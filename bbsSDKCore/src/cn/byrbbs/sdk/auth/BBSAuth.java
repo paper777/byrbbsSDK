@@ -54,7 +54,7 @@ public class BBSAuth {
 		// put reuqest parameters for url encode later
 		BBSParameters requestParams = new BBSParameters();
 		requestParams.put("client_id", this.authInfo.client_id);
-		requestParams.put("redirect_url", this.authInfo.redirect_url);
+		requestParams.put("redirect_uri", this.authInfo.redirect_url);
 		requestParams.put("response_type", this.authInfo.response_type);
 		requestParams.put("scope", this.authInfo.scope);
 		// put package name and signature !!REQUESTED
