@@ -216,7 +216,7 @@ public class BBSDialog extends Dialog {
 			// detect whether the page url is the call back url
 			// if so, get the token OR error information from it 
 			if ((url.startsWith(BBSDialog.this.mbbs.getAuthInfo()
-					.getRedirect_url())) && (!this.isCallBacked)) {
+					.getRedirect_uri())) && (!this.isCallBacked)) {
 				this.isCallBacked = true;
 				
 				BBSDialog.this.handleRedirectUrl(url);

@@ -22,12 +22,12 @@ public class BBSAuth {
 	/**
 	 * Constructor
 	 * @param client_id: developer's APP_KEY
-	 * @param redirect_url: url which developer signed 
+	 * @param redirect_uri: uri which developer signed 
 	 * @param scope: null for default/ {mail, attachment, article, favor, black}
 	 */
-	public BBSAuth(Context context, String client_id, String redirect_url, String scope){
+	public BBSAuth(Context context, String client_id, String redirect_uri, String scope){
 		this.mContext = context;
-		this.setAuthInfo(new AuthInfo(context, client_id, redirect_url, response_type, scope));
+		this.setAuthInfo(new AuthInfo(context, client_id, redirect_uri, response_type, scope));
 	}
 	
 	public BBSAuth(Context context, AuthInfo info){
@@ -51,22 +51,22 @@ public class BBSAuth {
 	private void startAuthDialog(BBSAuthListener listener){
 		if(listener == null) return;
 		
-		// put reuqest parameters for url encode later
+		// put reuqest parameters for uri encode later
 		BBSParameters requestParams = new BBSParameters();
 		requestParams.put("client_id", this.authInfo.client_id);
-		requestParams.put("redirect_uri", this.authInfo.redirect_url);
+		requestParams.put("redirect_uri", this.authInfo.redirect_uri);
 		requestParams.put("response_type", this.authInfo.response_type);
 		requestParams.put("scope", this.authInfo.scope);
 		// put package name and signature !!REQUESTED
 		requestParams.put("packagename", this.authInfo.pkgName);
 		requestParams.put("signature", this.authInfo.keyHash);
-		String url = BASE_URL + requestParams.encodeUrl();
+		String uri = BASE_URL + requestParams.encodeUrl();
 		
 		if (!NetworkHelper.hasInternetPermission(this.mContext)) {
 			UIUtils.showAlert(this.mContext, "Error", "Application requires permission to access the Internet");
 		}
 		else if (NetworkHelper.isNetworkAvailable(this.mContext)) {
-			new BBSDialog(this.mContext, url, listener, this).show();
+			new BBSDialog(this.mContext, uri, listener, this).show();
 		} else { // network not available, show toast
 			String networkNotAvailable = ResourceManager.getString(this.mContext, 2);
 			LogUtil.i("bbs_login", "String: " + networkNotAvailable);
@@ -88,7 +88,7 @@ public class BBSAuth {
 	 */
 	public static class AuthInfo{
 		private String client_id = "";
-		private String redirect_url = "";
+		private String redirect_uri = "";
 		private String scope = "";
 		private String response_type = "";
 		
@@ -98,10 +98,10 @@ public class BBSAuth {
 		
 		private Bundle mBundle = null;
 		
-		public AuthInfo(Context context, String client_id, String redirect_url, String response_type, String scope){
+		public AuthInfo(Context context, String client_id, String redirect_uri, String response_type, String scope){
 			
 			this.client_id = client_id;
-			this.redirect_url = redirect_url;
+			this.redirect_uri = redirect_uri;
 			this.scope = scope;
 			this.response_type = response_type;
 			
@@ -118,8 +118,8 @@ public class BBSAuth {
 			return this.client_id;
 		}
 		
-		public String getRedirect_url() {
-			return this.redirect_url;
+		public String getRedirect_uri() {
+			return this.redirect_uri;
 		}
 		
 		public String getScope() {
@@ -142,7 +142,7 @@ public class BBSAuth {
 		private void initAuthBundle(){
 			this.mBundle = new Bundle();
 			mBundle.putString("client_id", this.client_id);
-			mBundle.putString("redirect_url", this.redirect_url);
+			mBundle.putString("redirect_uri", this.redirect_uri);
 			mBundle.putString("pkgName", this.pkgName);
 			mBundle.putString("scope", this.scope);
 			mBundle.putString("keyHash", this.keyHash);
