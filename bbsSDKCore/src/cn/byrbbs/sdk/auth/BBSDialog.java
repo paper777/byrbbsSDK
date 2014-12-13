@@ -45,7 +45,6 @@ public class BBSDialog extends Dialog {
 
 	private static int theme = 16973840;
 
-	// constructor
 	public BBSDialog(Context context, String authUrl, BBSAuthListener listener,
 			BBSAuth mbbs) {
 		super(context, theme);
@@ -124,7 +123,6 @@ public class BBSDialog extends Dialog {
 		this.mWebView = new WebView(getContext());
 		this.mWebView.getSettings().setJavaScriptEnabled(true);
 
-		// @deprecated in api18
 		this.mWebView.getSettings().setSavePassword(false);
 
 		this.mWebView.requestFocus();
@@ -149,9 +147,9 @@ public class BBSDialog extends Dialog {
 		this.mWebViewContainer.setBackgroundDrawable(background);
 
 		this.mWebViewContainer.addView(this.mWebView, webviewLayout);
-		this.mWebViewContainer.setGravity(17);
+//		this.mWebViewContainer.setGravity(17);
 
-	    webViewContainerLayout.setMargins(20, (int)(50.0F * dm.density), 20, 20); 
+	    webViewContainerLayout.setMargins(0, (int)(50.0F * dm.density), 0, 0); 
 		this.mRootContainer.addView(this.mWebViewContainer, webViewContainerLayout);
 	}
 
@@ -196,7 +194,7 @@ public class BBSDialog extends Dialog {
 			}
 			return super.shouldOverrideUrlLoading(view, url);
 		}
-
+		
 		public void onReceivedError(WebView view, int errorCode,
 				String description, String failingUrl) {
 			LogUtil.d("BBSDialog", "onReceivedError: errorCode = " + errorCode
