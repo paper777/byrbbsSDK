@@ -1,0 +1,44 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.byr.bbs.sdkdemo">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name="cn.byr.bbs.sdkdemo.MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- main -->
+        <activity android:name="cn.byr.bbs.sdkdemo.AuthActivity" />
+        <activity android:name="cn.byr.bbs.sdkdemo.openAPI.OpenAPIActivity" />
+
+        <!-- open API -->
+        <activity android:name="cn.byr.bbs.sdkdemo.openAPI.UserAPIActivity" />
+        <activity android:name="cn.byr.bbs.sdkdemo.openAPI.SectionAPIActivity" />
+        <activity android:name="cn.byr.bbs.sdkdemo.openAPI.BoardAPIActivity" />
+        <activity android:name="cn.byr.bbs.sdkdemo.openAPI.ArticleAPIActivity" />
+        <activity android:name="cn.byr.bbs.sdkdemo.openAPI.AttachmentAPIActivity" />
+        <activity android:name="cn.byr.bbs.sdkdemo.openAPI.MailAPIActivity" />
+        <activity android:name="cn.byr.bbs.sdkdemo.openAPI.FavAPIActivity" />
+        <activity android:name="cn.byr.bbs.sdkdemo.openAPI.SearchAPIActivity" />
+        <activity android:name="cn.byr.bbs.sdkdemo.openAPI.ReferAPIActivity" />
+        <activity android:name="cn.byr.bbs.sdkdemo.openAPI.WidgetAPIActivity" />
+        <activity android:name="cn.byr.bbs.sdkdemo.openAPI.VoteAPIActivity" />
+    </application>
+
+    <!-- permissions -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+</manifest>

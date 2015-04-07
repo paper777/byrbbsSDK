@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/BBSSDK/src/main/java/cn/byr/bbs/sdk/utils/Lang.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/BBSSDKDemo/src/main/java/cn/byr/bbs/sdkdemo/AccessTokenKeeper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/BBSSDKDemo/src/main/java/cn/byr/bbs/sdkdemo/openAPI/AttachmentAPIActivity.java" charset="ISO-8859-1" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
+

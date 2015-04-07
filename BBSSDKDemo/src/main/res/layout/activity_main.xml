@@ -1,0 +1,23 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/feature_oauth"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="20dp"
+        android:onClick="onOauth"
+        android:text="@string/bbsSDK_feature_oauth" />
+
+    <Button
+        android:id="@+id/feature_openAPI"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/feature_oauth"
+        android:layout_margin="10dp"
+        android:text="@string/bbsSDK_feature_openAPI" />
+
+</RelativeLayout>
