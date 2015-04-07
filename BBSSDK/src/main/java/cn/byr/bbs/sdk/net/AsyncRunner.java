@@ -63,10 +63,7 @@ public class AsyncRunner {
                 return new AsyncRunner.AsyncTaskResult(result);
             } catch (BBSException e) {
                 return new AsyncRunner.AsyncTaskResult(e);
-            } catch (BBSHttpException e) {
-                e.printStackTrace();
             }
-            return null;
         }
 
         protected void onPreExecute() {
@@ -74,10 +71,11 @@ public class AsyncRunner {
 
         protected void onPostExecute(AsyncRunner.AsyncTaskResult<String> result) {
             BBSException exception = result.getError();
-            if (exception != null)
+            if (exception != null) {
                 this.mListener.onException(exception);
-            else
+            } else {
                 this.mListener.onComplete((String) result.getResult());
+            }
         }
     }// private static calss
 }

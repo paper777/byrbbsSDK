@@ -29,7 +29,7 @@ public class AttachmentApi extends BaseApi {
             return;
         }
 
-        String url = ATT_URL + board + "/" + id;
+        String url = ATT_URL + '/' + board + "/" + id;
 
         asyncRequest(url, HTTP_GET, null, listener);
     }
@@ -54,7 +54,7 @@ public class AttachmentApi extends BaseApi {
             param.put("name", attName);
         }
 
-        String url = ATT_URL + board + "/delete/" + id;
+        String url = ATT_URL + '/' + board + "/delete/" + id;
         asyncRequest(url, HTTP_POST, param, listener);
     }
 
@@ -75,7 +75,7 @@ public class AttachmentApi extends BaseApi {
         if (file.exists()) {
             param.put("file", file);
         }
-        String url = ATT_URL + board + "/add/" + id;
+        String url = ATT_URL + '/' + board + "/add/" + id;
         asyncRequest(url, HTTP_POST, param, listener);
     }
 

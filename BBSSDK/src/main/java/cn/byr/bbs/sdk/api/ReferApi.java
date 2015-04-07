@@ -30,7 +30,7 @@ public class ReferApi extends BaseApi {
         param.put("count", count);
         param.put("page", page);
 
-        String url = RF_URL + "at";
+        String url = RF_URL + "/at";
 
         asyncRequest(url, HTTP_GET, param, listener);
     }
@@ -56,7 +56,7 @@ public class ReferApi extends BaseApi {
         param.put("count", count);
         param.put("page", page);
 
-        String url = RF_URL + "reply";
+        String url = RF_URL + "/reply";
 
         asyncRequest(url, HTTP_GET, param, listener);
     }
@@ -80,7 +80,7 @@ public class ReferApi extends BaseApi {
      */
     public void info(String type, RequestListener listener) {
         if (type.equals("at") || type.equals("reply")) {
-            String url = RF_URL + type + "/info";
+            String url = RF_URL + '/' + type + "/info";
             asyncRequest(url, HTTP_GET, null, listener);
         }
     }
@@ -96,7 +96,7 @@ public class ReferApi extends BaseApi {
      */
     public void setRead(String type, int index, RequestListener listener) {
         if (type.equals("at") || type.equals("reply")) {
-            String url = RF_URL + type + "/setRead/" + index;
+            String url = RF_URL + '/' + type + "/setRead/" + index;
             asyncRequest(url, HTTP_POST, null, listener);
         }
     }
@@ -111,7 +111,7 @@ public class ReferApi extends BaseApi {
      */
     public void readAll(String type, RequestListener listener) {
         if (type.equals("at") || type.equals("reply")) {
-            String url = RF_URL + type + "/setRead";
+            String url = RF_URL + '/' + type + "/setRead";
             asyncRequest(url, HTTP_POST, null, listener);
         }
     }
@@ -127,7 +127,7 @@ public class ReferApi extends BaseApi {
      */
     public void delete(String type, int index, RequestListener listener) {
         if (type.equals("at") || type.equals("reply")) {
-            String url = RF_URL + type + "/delete/" + index;
+            String url = RF_URL + '/' + type + "/delete/" + index;
             asyncRequest(url, HTTP_POST, null, listener);
         }
     }
@@ -142,7 +142,7 @@ public class ReferApi extends BaseApi {
      */
     public void deleteAll(String type, RequestListener listener) {
         if (type.equals("at") || type.equals("reply")) {
-            String url = RF_URL + type + "/delete";
+            String url = RF_URL + '/' + type + "/delete";
             asyncRequest(url, HTTP_POST, null, listener);
         }
     }

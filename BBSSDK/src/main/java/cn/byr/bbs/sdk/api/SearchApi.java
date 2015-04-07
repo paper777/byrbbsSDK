@@ -37,7 +37,7 @@ public class SearchApi extends BaseApi {
 
         BBSParameters param = new BBSParameters();
         param.put("board", board);
-        String url = SR_URL + "board";
+        String url = SR_URL + "/board";
         asyncRequest(url, HTTP_GET, param, listener);
     }
 
@@ -67,7 +67,7 @@ public class SearchApi extends BaseApi {
             param.put("titlen", titlen);
         }
 
-        String url = SR_URL + "threads";
+        String url = SR_URL + "/threads";
         asyncRequest(url, HTTP_GET, param, listener);
     }
 
@@ -86,7 +86,7 @@ public class SearchApi extends BaseApi {
         param.put("board", board);
         param.put("author", author);
 
-        String url = SR_URL + "threads";
+        String url = SR_URL + "/threads";
         asyncRequest(url, HTTP_GET, param, listener);
     }
 }

@@ -28,7 +28,7 @@ public class BoardApi extends BaseApi {
             return;
         }
 
-        String url = BD_URL + name;
+        String url = BD_URL + '/' + name;
 
         asyncRequest(url, HTTP_GET, null, listener);
     }

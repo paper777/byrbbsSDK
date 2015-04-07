@@ -34,7 +34,7 @@ public class ArticleApi extends BaseApi {
             return;
         }
 
-        String url = AR_URL + board + "/" + id;
+        String url = AR_URL + '/' + board + "/" + id;
         asyncRequest(url, HTTP_GET, null, listener);
     }
 
@@ -80,7 +80,7 @@ public class ArticleApi extends BaseApi {
         }
         param.put("content", content);
 
-        String url = AR_URL + board + "/post";
+        String url = AR_URL + '/' + board + "/post";
         asyncRequest(url, HTTP_POST, param, listener);
     }
 
@@ -107,7 +107,7 @@ public class ArticleApi extends BaseApi {
         param.put("content", content);
         param.put("reid", reid);
 
-        String url = AR_URL + board + "/post";
+        String url = AR_URL + '/' + board + "/post";
         asyncRequest(url, HTTP_POST, param, listener);
     }
 
@@ -137,7 +137,7 @@ public class ArticleApi extends BaseApi {
             param.put("target", targetUserid);
         }
 
-        String url = AR_URL + board + "/forward/" + id;
+        String url = AR_URL + '/' + board + "/forward/" + id;
         asyncRequest(url, HTTP_POST, param, listener);
     }
 
@@ -174,7 +174,7 @@ public class ArticleApi extends BaseApi {
 
         BBSParameters param = new BBSParameters();
         param.put("target", targetBoard);
-        String url = AR_URL + board + "/cross/" + id;
+        String url = AR_URL + '/' + board + "/cross/" + id;
 
         asyncRequest(url, HTTP_POST, param, listener);
     }
@@ -197,7 +197,7 @@ public class ArticleApi extends BaseApi {
         BBSParameters param = new BBSParameters();
         param.put("title", title);
         param.put("content", content);
-        String url = AR_URL + board + "/update/" + id;
+        String url = AR_URL + '/' + board + "/update/" + id;
 
         asyncRequest(url, HTTP_POST, param, listener);
     }
@@ -214,7 +214,7 @@ public class ArticleApi extends BaseApi {
             return;
         }
 
-        String url = AR_URL + board + "/delete/" + id;
+        String url = AR_URL + '/' + board + "/delete/" + id;
 
         asyncRequest(url, HTTP_POST, null, listener);
     }

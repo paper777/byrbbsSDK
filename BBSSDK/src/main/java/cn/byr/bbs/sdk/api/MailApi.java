@@ -26,7 +26,7 @@ public class MailApi extends BaseApi {
      * @param listener
      */
     public void inbox(RequestListener listener) {
-        String url = M_URL + "inbox";
+        String url = M_URL + "/inbox";
         asyncRequest(url, HTTP_GET, null, listener);
     }
 
@@ -36,7 +36,7 @@ public class MailApi extends BaseApi {
      * @param listener
      */
     public void outbox(RequestListener listener) {
-        String url = M_URL + "outbox";
+        String url = M_URL + "/outbox";
         asyncRequest(url, HTTP_GET, null, listener);
     }
 
@@ -46,7 +46,7 @@ public class MailApi extends BaseApi {
      * @param listener
      */
     public void trashbox(RequestListener listener) {
-        String url = M_URL + "deleted";
+        String url = M_URL + "/deleted";
         asyncRequest(url, HTTP_GET, null, listener);
     }
 
@@ -57,7 +57,7 @@ public class MailApi extends BaseApi {
      * @param listener
      */
     public void boxInfo(RequestListener listener) {
-        String url = M_URL + "info";
+        String url = M_URL + "/info";
         asyncRequest(url, HTTP_GET, null, listener);
     }
 
@@ -78,7 +78,7 @@ public class MailApi extends BaseApi {
         if (boxType.equals("inbox")
                 || boxType.equals("outbox")
                 || boxType.equals("deleted")) {
-            String url = M_URL + boxType + "/" + index;
+            String url = M_URL + '/' + boxType + "/" + index;
             asyncRequest(url, HTTP_GET, null, listener);
         }
     }
@@ -112,7 +112,7 @@ public class MailApi extends BaseApi {
         param.put("signature", sig);
         param.put("backup", backup);
 
-        String url = M_URL + "send";
+        String url = M_URL + "/send";
         asyncRequest(url, HTTP_POST, param, listener);
     }
 
@@ -150,7 +150,7 @@ public class MailApi extends BaseApi {
             param.put("signature", sig);
             param.put("backup", backup);
 
-            String url = M_URL + boxType + "/reply/" + index;
+            String url = M_URL + '/' + boxType + "/reply/" + index;
             asyncRequest(url, HTTP_POST, param, listener);
         }// if
     }
@@ -172,7 +172,7 @@ public class MailApi extends BaseApi {
         if (boxType.equals("inbox")
                 || boxType.equals("outbox")
                 || boxType.equals("deleted")) {
-            String url = M_URL + boxType + "/delete/" + index;
+            String url = M_URL + '/' + boxType + "/delete/" + index;
             asyncRequest(url, HTTP_POST, null, listener);
         }
     }// func
@@ -207,7 +207,7 @@ public class MailApi extends BaseApi {
             param.put("target", targetUserid);
             param.put("noansi", noansi);
             param.put("big5", big5);
-            String url = M_URL + boxType + "/forward/" + index;
+            String url = M_URL + '/' + boxType + "/forward/" + index;
             asyncRequest(url, HTTP_POST, param, listener);
         }
     }// func

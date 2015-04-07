@@ -40,7 +40,7 @@ public class VoteApi extends BaseApi {
             return;
         }
 
-        String url = VOTE_URL + "category/" + category;
+        String url = VOTE_URL + "/category/" + category;
         asyncRequest(url, HTTP_GET, null, listener);
     }
 
@@ -54,7 +54,7 @@ public class VoteApi extends BaseApi {
         if (TextUtils.isEmpty(userid)) {
             return;
         }
-        String url = VOTE_URL + "category/list";
+        String url = VOTE_URL + "/category/list";
 
         BBSParameters param = new BBSParameters();
         param.put("u", userid);
@@ -84,7 +84,7 @@ public class VoteApi extends BaseApi {
         } else {
             return;
         }
-        String url = VOTE_URL + vid;
+        String url = VOTE_URL + '/' + vid;
         asyncRequest(url, HTTP_POST, param, listener);
 
     }

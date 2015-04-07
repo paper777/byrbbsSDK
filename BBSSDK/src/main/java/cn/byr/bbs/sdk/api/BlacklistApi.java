@@ -31,7 +31,7 @@ public class BlacklistApi extends BaseApi {
         param.put("count", count);
         param.put("page", page);
 
-        String url = BL_URL + "list";
+        String url = BL_URL + "/list";
         asyncRequest(url, HTTP_GET, param, listener);
     }
 
@@ -54,7 +54,7 @@ public class BlacklistApi extends BaseApi {
         if (!TextUtils.isEmpty(userid)) {
             BBSParameters param = new BBSParameters();
             param.put("id", userid);
-            String url = BL_URL + "add";
+            String url = BL_URL + "/add";
             asyncRequest(url, HTTP_POST, param, listener);
         }
     }
@@ -69,7 +69,7 @@ public class BlacklistApi extends BaseApi {
         if (!TextUtils.isEmpty(userid)) {
             BBSParameters param = new BBSParameters();
             param.put("id", userid);
-            String url = BL_URL + "delete";
+            String url = BL_URL + "/delete";
             asyncRequest(url, HTTP_POST, param, listener);
         }
     }

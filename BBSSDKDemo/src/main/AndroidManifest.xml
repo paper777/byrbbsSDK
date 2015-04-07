@@ -25,6 +25,7 @@
         <activity android:name="cn.byr.bbs.sdkdemo.openAPI.UserAPIActivity" />
         <activity android:name="cn.byr.bbs.sdkdemo.openAPI.SectionAPIActivity" />
         <activity android:name="cn.byr.bbs.sdkdemo.openAPI.BoardAPIActivity" />
+        <activity android:name="cn.byr.bbs.sdkdemo.openAPI.BlacklistAPIActivity" />
         <activity android:name="cn.byr.bbs.sdkdemo.openAPI.ArticleAPIActivity" />
         <activity android:name="cn.byr.bbs.sdkdemo.openAPI.AttachmentAPIActivity" />
         <activity android:name="cn.byr.bbs.sdkdemo.openAPI.MailAPIActivity" />

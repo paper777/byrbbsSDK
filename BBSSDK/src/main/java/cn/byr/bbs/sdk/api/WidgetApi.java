@@ -33,7 +33,7 @@ public class WidgetApi extends BaseApi {
      * @param listener
      */
     public void topten(RequestListener listener) {
-        String url = WG_URL + "topten";
+        String url = WG_URL + "/topten";
         asyncRequest(url, HTTP_GET, null, listener);
     }
 
@@ -43,7 +43,7 @@ public class WidgetApi extends BaseApi {
      * @param listener
      */
     public void recommend(RequestListener listener) {
-        String url = WG_URL + "recommend";
+        String url = WG_URL + "/recommend";
         asyncRequest(url, HTTP_GET, null, listener);
     }
 
@@ -55,7 +55,7 @@ public class WidgetApi extends BaseApi {
      */
     public void sectionTop(int sectionNum, RequestListener listener) {
         if (sectionNum >= 0 && sectionNum <= 9) {
-            String url = WG_URL + "section-" + sectionNum;
+            String url = WG_URL + "/section-" + sectionNum;
             asyncRequest(url, HTTP_GET, null, listener);
         }
     }// func

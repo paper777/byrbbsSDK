@@ -27,7 +27,7 @@ public class FavApi extends BaseApi {
      */
     public void show(int level, RequestListener listener) {
         if (level < 0) return;
-        String url = F_URL + level;
+        String url = F_URL + '/' + level;
         asyncRequest(url, HTTP_GET, null, listener);
     }
 
@@ -47,7 +47,7 @@ public class FavApi extends BaseApi {
         param.put("name", name);
         param.put("dir", dir);
 
-        String url = F_URL + "add/" + level;
+        String url = F_URL + "/add/" + level;
 
         asyncRequest(url, HTTP_POST, param, listener);
     }
@@ -68,7 +68,7 @@ public class FavApi extends BaseApi {
         param.put("name", name);
         param.put("dir", dir);
 
-        String url = F_URL + "delete/" + level;
+        String url = F_URL + "/delete/" + level;
 
         asyncRequest(url, HTTP_POST, param, listener);
     }

@@ -49,7 +49,6 @@ public class UserAPIActivity extends Activity implements OnItemClickListener {
 
         @Override
         public void onException(BBSException e) {
-            // TODO Auto-generated method stub
             LogUtil.e(TAG, e.getMessage());
         }
     };
