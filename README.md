@@ -22,7 +22,16 @@
 - API 元数据（write by dss886) 在cn.byrbbs.sdk.api.model 或者repository中APImodel下提供
 
 # Usage
+### Recomanded
+```
+repositories {
+    jcenter()
+}
 
+dependencies {
+    compile 'com.github.paper777:BBSSDK:alpha@aar'
+}
+```
 ### 1、直接引用 jar 文件
 - 在 [release][6] 目录下下载 .jar 文件
 - 将 jar 文件放入工程 libs 目录中并将其引入工程
