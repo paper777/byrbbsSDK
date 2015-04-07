@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import cn.byr.bbs.sdk.auth.Oauth2AccessToken;
 import cn.byr.bbs.sdk.net.BBSParameters;
 import cn.byr.bbs.sdk.net.RequestListener;
+import cn.byr.bbs.sdk.utils.URLHelper;
 
 /**
  * search(board, article, thread) API
@@ -19,7 +20,7 @@ import cn.byr.bbs.sdk.net.RequestListener;
  * 
  */
 public class SearchApi extends BaseApi {
-    private String SR_URL = BASE_URL + "/search/";
+    private String SR_URL = URLHelper.SEARCH;
 
     public SearchApi(Oauth2AccessToken accessToken) {
         super(accessToken);

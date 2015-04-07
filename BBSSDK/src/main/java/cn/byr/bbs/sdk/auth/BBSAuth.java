@@ -8,6 +8,7 @@ import cn.byr.bbs.sdk.utils.Lang;
 import cn.byr.bbs.sdk.utils.LogUtil;
 import cn.byr.bbs.sdk.utils.NetworkHelper;
 import cn.byr.bbs.sdk.utils.UIUtils;
+import cn.byr.bbs.sdk.utils.URLHelper;
 import cn.byr.bbs.sdk.utils.Utility;
 
 /**
@@ -15,7 +16,6 @@ import cn.byr.bbs.sdk.utils.Utility;
  */
 public class BBSAuth {
     public static final String TAG = "bbsAuth_login";
-    private static final String BASE_URL = "http://eid.byr.cn/paper/nforum/oauth2/authorize?";
     private static final String response_type = "token";
 
     private Context mContext;
@@ -64,7 +64,7 @@ public class BBSAuth {
         // put package name and signature !!REQUESTED
         requestParams.put("packagename", this.authInfo.pkgName);
         requestParams.put("signature", this.authInfo.keyHash);
-        String uri = BASE_URL + requestParams.encodeUrl();
+        String uri = URLHelper.URL_OAUTH2_AUTHORIZE + "?" +  requestParams.encodeUrl();
 
         if (!NetworkHelper.hasInternetPermission(this.mContext)) {
             UIUtils.showAlert(this.mContext, "Error", "Application requires permission to access the Internet");

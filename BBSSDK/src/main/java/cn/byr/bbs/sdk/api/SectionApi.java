@@ -3,6 +3,7 @@ package cn.byr.bbs.sdk.api;
 
 import cn.byr.bbs.sdk.auth.Oauth2AccessToken;
 import cn.byr.bbs.sdk.net.RequestListener;
+import cn.byr.bbs.sdk.utils.URLHelper;
 
 /**
  * SectionAPI: get section list
@@ -11,7 +12,7 @@ import cn.byr.bbs.sdk.net.RequestListener;
  */
 public class SectionApi extends BaseApi {
 
-    private String SEC_URL = BASE_URL + "/section";
+    private String SEC_URL = URLHelper.SECTION;
 
     public SectionApi(Oauth2AccessToken accessToken) {
         super(accessToken);

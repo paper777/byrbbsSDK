@@ -2,6 +2,7 @@ package cn.byr.bbs.sdk.api;
 
 import cn.byr.bbs.sdk.auth.Oauth2AccessToken;
 import cn.byr.bbs.sdk.net.RequestListener;
+import cn.byr.bbs.sdk.utils.URLHelper;
 
 /**
  * Widget API
@@ -20,7 +21,7 @@ public class WidgetApi extends BaseApi {
     public static int FITNESS = 7;
     public static int GAME = 8;
     public static int HOMETOWN = 9;
-    private String WG_URL = BASE_URL + "/widget/";
+    private String WG_URL = URLHelper.WIDGET;
 
     public WidgetApi(Oauth2AccessToken accessToken) {
         super(accessToken);

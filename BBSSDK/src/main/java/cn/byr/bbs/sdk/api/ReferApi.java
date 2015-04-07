@@ -3,6 +3,7 @@ package cn.byr.bbs.sdk.api;
 import cn.byr.bbs.sdk.auth.Oauth2AccessToken;
 import cn.byr.bbs.sdk.net.BBSParameters;
 import cn.byr.bbs.sdk.net.RequestListener;
+import cn.byr.bbs.sdk.utils.URLHelper;
 
 /**
  * Refer(notify) API
@@ -11,7 +12,7 @@ import cn.byr.bbs.sdk.net.RequestListener;
  */
 public class ReferApi extends BaseApi {
 
-    private String RF_URL = BASE_URL + "/refer/";
+    private String RF_URL = URLHelper.REFER;
 
     public ReferApi(Oauth2AccessToken accessToken) {
         super(accessToken);

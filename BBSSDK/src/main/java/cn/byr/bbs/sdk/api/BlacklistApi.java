@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import cn.byr.bbs.sdk.auth.Oauth2AccessToken;
 import cn.byr.bbs.sdk.net.BBSParameters;
 import cn.byr.bbs.sdk.net.RequestListener;
+import cn.byr.bbs.sdk.utils.URLHelper;
 
 /**
  * Blacklist API
@@ -12,7 +13,7 @@ import cn.byr.bbs.sdk.net.RequestListener;
  * @author ALSO
  */
 public class BlacklistApi extends BaseApi {
-    private String BL_URL = BASE_URL + "/blacklist/";
+    private String BL_URL = URLHelper.BLACKLIST;
 
     public BlacklistApi(Oauth2AccessToken accessToken) {
         super(accessToken);

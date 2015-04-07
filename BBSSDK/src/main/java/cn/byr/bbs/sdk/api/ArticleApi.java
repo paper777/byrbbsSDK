@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import cn.byr.bbs.sdk.auth.Oauth2AccessToken;
 import cn.byr.bbs.sdk.net.BBSParameters;
 import cn.byr.bbs.sdk.net.RequestListener;
+import cn.byr.bbs.sdk.utils.URLHelper;
 
 /**
  * articleApi: handle some article operations
@@ -13,7 +14,7 @@ import cn.byr.bbs.sdk.net.RequestListener;
  */
 public class ArticleApi extends BaseApi {
 
-    private String AR_URL = BASE_URL + "/article/";
+    private String AR_URL = URLHelper.ARTICLE;
 
     public ArticleApi(Oauth2AccessToken accessToken) {
         super(accessToken);

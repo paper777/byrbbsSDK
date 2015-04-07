@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BBSSDK/BBSSDK.iml" filepath="$PROJECT_DIR$/BBSSDK/BBSSDK.iml" />
       <module fileurl="file://$PROJECT_DIR$/BBSSDKDemo/BBSSDKDemo.iml" filepath="$PROJECT_DIR$/BBSSDKDemo/BBSSDKDemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SDKDemo.iml" filepath="$PROJECT_DIR$/SDKDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/byrbbsSDK.iml" filepath="$PROJECT_DIR$/byrbbsSDK.iml" />
     </modules>
   </component>
 </project>

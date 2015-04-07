@@ -7,10 +7,11 @@ import java.io.File;
 import cn.byr.bbs.sdk.auth.Oauth2AccessToken;
 import cn.byr.bbs.sdk.net.BBSParameters;
 import cn.byr.bbs.sdk.net.RequestListener;
+import cn.byr.bbs.sdk.utils.URLHelper;
 
 public class AttachmentApi extends BaseApi {
 
-    private String ATT_URL = BASE_URL + "/attachment/";
+    private String ATT_URL = URLHelper.ATTACHMENT;
 
     public AttachmentApi(Oauth2AccessToken accessToken) {
         super(accessToken);

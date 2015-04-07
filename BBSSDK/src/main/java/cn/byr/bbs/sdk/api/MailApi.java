@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import cn.byr.bbs.sdk.auth.Oauth2AccessToken;
 import cn.byr.bbs.sdk.net.BBSParameters;
 import cn.byr.bbs.sdk.net.RequestListener;
+import cn.byr.bbs.sdk.utils.URLHelper;
 
 /**
  * Mail API
@@ -13,7 +14,7 @@ import cn.byr.bbs.sdk.net.RequestListener;
  */
 public class MailApi extends BaseApi {
 
-    private String M_URL = BASE_URL + "/mail/";
+    private String M_URL = URLHelper.MAIL;
 
     public MailApi(Oauth2AccessToken accessToken) {
         super(accessToken);

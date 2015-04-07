@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import cn.byr.bbs.sdk.auth.Oauth2AccessToken;
 import cn.byr.bbs.sdk.net.RequestListener;
 import cn.byr.bbs.sdk.utils.LogUtil;
+import cn.byr.bbs.sdk.utils.URLHelper;
 
 /**
  * -API: query user information
@@ -13,7 +14,7 @@ import cn.byr.bbs.sdk.utils.LogUtil;
  */
 public class UserApi extends BaseApi {
 
-    private String USER_URL = BASE_URL + "/user";
+    private String USER_URL = URLHelper.USER;
 
     public UserApi(Oauth2AccessToken accessToken) {
         super(accessToken);

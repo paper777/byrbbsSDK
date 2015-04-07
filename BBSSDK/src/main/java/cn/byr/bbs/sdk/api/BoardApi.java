@@ -2,6 +2,7 @@ package cn.byr.bbs.sdk.api;
 
 import cn.byr.bbs.sdk.auth.Oauth2AccessToken;
 import cn.byr.bbs.sdk.net.RequestListener;
+import cn.byr.bbs.sdk.utils.URLHelper;
 
 /**
  * BoardApi: get board information
@@ -10,7 +11,7 @@ import cn.byr.bbs.sdk.net.RequestListener;
  */
 public class BoardApi extends BaseApi {
 
-    private String BD_URL = BASE_URL + "/board/";
+    private String BD_URL = URLHelper.BOARD;
 
     public BoardApi(Oauth2AccessToken accessToken) {
         super(accessToken);

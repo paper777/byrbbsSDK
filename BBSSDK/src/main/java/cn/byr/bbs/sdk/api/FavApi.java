@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import cn.byr.bbs.sdk.auth.Oauth2AccessToken;
 import cn.byr.bbs.sdk.net.BBSParameters;
 import cn.byr.bbs.sdk.net.RequestListener;
+import cn.byr.bbs.sdk.utils.URLHelper;
 
 /**
  * favorite API
@@ -12,7 +13,7 @@ import cn.byr.bbs.sdk.net.RequestListener;
  * @author ALSO
  */
 public class FavApi extends BaseApi {
-    private String F_URL = BASE_URL + "/favorite/";
+    private String F_URL = URLHelper.FAV;
 
     public FavApi(Oauth2AccessToken accessToken) {
         super(accessToken);

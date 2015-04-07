@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import cn.byr.bbs.sdk.auth.Oauth2AccessToken;
 import cn.byr.bbs.sdk.net.BBSParameters;
 import cn.byr.bbs.sdk.net.RequestListener;
+import cn.byr.bbs.sdk.utils.URLHelper;
 
 /**
  * VOTE API
@@ -13,7 +14,7 @@ import cn.byr.bbs.sdk.net.RequestListener;
  */
 public class VoteApi extends BaseApi {
 
-    private String VOTE_URL = BASE_URL + "/vote/";
+    private String VOTE_URL = URLHelper.VOTE;
 
     public VoteApi(Oauth2AccessToken accessToken) {
         super(accessToken);
