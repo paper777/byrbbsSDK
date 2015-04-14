@@ -22,6 +22,4 @@ allprojects {
         mavenCentral()
     }
 
-    group = "com.github.paper777"
-    version = "alpha"
 }

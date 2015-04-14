@@ -19,10 +19,21 @@
 # About API 
 
 - usage 部分示例了API 调用的简单步骤。[**详细API接口函数请查看WIKI**][7]
-- API 元数据（write by dss886) 在cn.byrbbs.sdk.api.model 或者repository中APImodel下提供
+- API 元数据（write by dss886) 在cn.byr.bbs.sdk.api.model 或者repository中APImodel下提供
 
 # Usage
+### 0、Recomanded
+```
+repositories {
+    jcenter()
+}
 
+dependencies {
+    compile 'com.github.paper777:BBSSDK:1.0@aar'
+    // or
+    // compile(group: 'com.github.paper777', name: 'BBSSDK', version: '1.0', ext: 'aar')
+}
+```
 ### 1、直接引用 jar 文件
 - 在 [release][6] 目录下下载 .jar 文件
 - 将 jar 文件放入工程 libs 目录中并将其引入工程
@@ -30,7 +41,8 @@
 ###	2、克隆整个仓库
 - 克隆这个仓库
 - 将工程作为librarya引入您的工程
-- 要将lib工程中assets目录中的内容复制到您的工程assets的目录中，否则无法使用
+- 将BBSSDKDEMO/build.gradle 中的签名文件替换成自己的 storeFile file('path/to/bbsSDKkeystore_debug')
+
 
 # Authorization setup
 
@@ -171,7 +183,7 @@ Special Thanks to [@dss886][3] for contributions to this projects
 人生如梦，一尊还酹江月。
 
 -------
-[1]:http://http://oauth.net/2/
+[1]:http://developers.byr.cn/wiki
 [2]:http://bbs.byr.cn
 [3]:https://github.com/dss886
 [4]:https://github.com/paper777/byrbbsSDK/issues

@@ -3,9 +3,9 @@ apply plugin: 'com.android.application'
 android {
     signingConfigs {
         bbs {
-            keyAlias 'debug.keystore'
+            keyAlias 'androiddebugkey'
             keyPassword 'android'
-            storeFile file('C:/Users/ALSO/Documents/AndroidWork/bbsSDKkeystore_debug')
+            storeFile file('C:/Users/ALSO/Documents/AndroidWork/byrbbsSDK/release/bbsSDKkeystore_debug')
             storePassword 'android'
         }
     }
@@ -22,6 +22,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.bbs
+        }
+        debug {
+            signingConfig signingConfigs.bbs
         }
     }
 }
