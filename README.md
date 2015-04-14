@@ -29,7 +29,9 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.paper777:BBSSDK:alpha@aar'
+    compile 'com.github.paper777:BBSSDK:1.0@aar'
+    // or
+    // compile(group: 'com.github.paper777', name: 'BBSSDK', version: '1.0', ext: 'jar')
 }
 ```
 ### 1、直接引用 jar 文件
