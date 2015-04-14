@@ -32,6 +32,7 @@ dependencies {
     compile 'com.github.paper777:BBSSDK:1.0@aar'
     // or
     // compile(group: 'com.github.paper777', name: 'BBSSDK', version: '1.0', ext: 'aar')
+
 }
 ```
 ### 1、直接引用 jar 文件
@@ -42,6 +43,9 @@ dependencies {
 - 克隆这个仓库
 - 将工程作为librarya引入您的工程
 - 将BBSSDKDEMO/build.gradle 中的签名文件替换成自己的 storeFile file('path/to/bbsSDKkeystore_debug')
+
+=======
+
 
 
 # Authorization setup
