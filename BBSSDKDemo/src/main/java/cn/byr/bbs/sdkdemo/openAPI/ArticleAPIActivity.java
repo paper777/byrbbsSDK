@@ -69,11 +69,11 @@ public class ArticleAPIActivity extends Activity implements OnItemClickListener 
             if (mAccessToken != null && mAccessToken.isSessionValid()) {
                 switch (position) {
                     case 0:
-                        mArticleApi.showArticle("Zhejiang", 153368, mListener);
+                        mArticleApi.showArticle("Zhejiang", 152900, mListener);
                         break;
 
                     case 1:
-                        mArticleApi.showThread("Zhejiang", 153368, mListener);
+                        mArticleApi.showThread("Zhejiang", 152900, mListener);
                         break;
 
                     case 2:
@@ -81,11 +81,11 @@ public class ArticleAPIActivity extends Activity implements OnItemClickListener 
                         break;
 
                     case 3:
-                        mArticleApi.forward("Zhejiang", 153368, "paper777", mListener);
+                        mArticleApi.forward("Zhejiang", 152900, "paper777", mListener);
                         break;
 
                     case 4:
-                        mArticleApi.reproduce("Zhejiang", 153368, "Zhejiang", mListener);
+                        mArticleApi.reproduce("Zhejiang", 152900, "Zhejiang", mListener);
                         break;
 
                     case 5:

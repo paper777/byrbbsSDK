@@ -5,6 +5,12 @@
 
 ------
 
+# 版本更新记录
+
+- 1.1 修复了threads 报告版面不存在的错误 2015/5
+
+---
+
 # Features
 - [北邮人论坛][2]的开放授权，基于[OAuth2.0][1]中client-side模式
 - 封装了北邮人论坛API的各个元数据
@@ -29,9 +35,9 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.paper777:BBSSDK:1.0@aar'
+    compile 'com.github.paper777:BBSSDK:1.1@aar'
     // or
-    // compile(group: 'com.github.paper777', name: 'BBSSDK', version: '1.0', ext: 'aar')
+    // compile(group: 'com.github.paper777', name: 'BBSSDK', version: '1.1', ext: 'aar')
 
 }
 ```
@@ -160,9 +166,6 @@ class AuthListener implements BBSAuthListener {
 ------
 如有错误、bug等请移步[这里][4]，欢迎pull request!
 
-------
-
-Special Thanks to [@dss886][3] for contributions to this projects
 
 -----
 

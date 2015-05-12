@@ -54,7 +54,7 @@ public class ArticleApi extends BaseApi {
             return;
         }
 
-        String url = AR_URL + "/thread/" + board + "/" + id;
+        String url = URLHelper.THREADS + "/" + board + "/" + id;
         asyncRequest(url, HTTP_GET, null, listener);
     }
 

@@ -16,6 +16,7 @@ public class URLHelper {
             "http://bbs.byr.cn/open/" );
 
     public static final String ARTICLE = URL_BBS_API + "article";
+    public static final String THREADS= URL_BBS_API + "threads";
     public static final String ATTACHMENT = URL_BBS_API + "attachment";
     public static final String BLACKLIST = URL_BBS_API + "blacklist";
     public static final String BOARD = URL_BBS_API + "board";
