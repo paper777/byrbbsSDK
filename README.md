@@ -8,6 +8,7 @@
 # 版本更新记录
 
 - 1.1 修复了threads 报告版面不存在的错误 2015/5
+- 1.2 API page number fix; 增加了收录文章的API接口 2015/5/20
 
 ---
 
@@ -35,12 +36,14 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.paper777:BBSSDK:1.1@aar'
+    compile 'com.github.paper777:BBSSDK:1.2@aar'
     // or
-    // compile(group: 'com.github.paper777', name: 'BBSSDK', version: '1.1', ext: 'aar')
+    // compile(group: 'com.github.paper777', name: 'BBSSDK', version: '1.2', ext: 'aar')
 
 }
 ```
+** 建议使用0, 并不建议下面两种**
+
 ### 1、直接引用 jar 文件
 - 在 [release][6] 目录下下载 .jar 文件
 - 将 jar 文件放入工程 libs 目录中并将其引入工程
