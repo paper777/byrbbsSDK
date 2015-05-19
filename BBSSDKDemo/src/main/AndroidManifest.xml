@@ -30,6 +30,7 @@
         <activity android:name="cn.byr.bbs.sdkdemo.openAPI.AttachmentAPIActivity" />
         <activity android:name="cn.byr.bbs.sdkdemo.openAPI.MailAPIActivity" />
         <activity android:name="cn.byr.bbs.sdkdemo.openAPI.FavAPIActivity" />
+        <activity android:name="cn.byr.bbs.sdkdemo.openAPI.CollectionAPIActivity" />
         <activity android:name="cn.byr.bbs.sdkdemo.openAPI.SearchAPIActivity" />
         <activity android:name="cn.byr.bbs.sdkdemo.openAPI.ReferAPIActivity" />
         <activity android:name="cn.byr.bbs.sdkdemo.openAPI.WidgetAPIActivity" />

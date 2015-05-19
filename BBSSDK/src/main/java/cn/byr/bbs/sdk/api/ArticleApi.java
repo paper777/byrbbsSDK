@@ -43,11 +43,13 @@ public class ArticleApi extends BaseApi {
      *
      * @param board
      * @param id
+     * @param au string user id in a thread to show only his articles
+     * @param page int page number
+     * @param count int article count of each page. max number: 50
      * @param listener
      */
-    public void showThread(String board, int id, RequestListener listener
-                           /** params below is not requested*/
-            /*, String au, int count, int page */) {
+    public void showThread(String board, int id,
+             String au, int page, int count, RequestListener listener) {
         if (TextUtils.isEmpty(board)
                 || id < 0
                 || listener == null) {
@@ -55,10 +57,37 @@ public class ArticleApi extends BaseApi {
         }
 
         String url = URLHelper.THREADS + "/" + board + "/" + id;
-        asyncRequest(url, HTTP_GET, null, listener);
+        BBSParameters param = new BBSParameters();
+        if (!TextUtils.isEmpty(au)) {
+            param.put("au", au);
+        }
+        param.put("count", count);
+        param.put("page", page);
+        asyncRequest(url, HTTP_GET, param, listener);
     }
 
+    /**
+     * get a thread using default params: count 10, page 1
+     *
+     * @param board
+     * @param id
+     * @param listener
+     */
+    public void showThread(String board, int id, RequestListener listener) {
+        showThread(board, id, null, 1, 10, listener);
+    }
 
+    /**
+     * get a thread using default params: count 10
+     *
+     * @param board
+     * @param id int article number
+     * @param page int page number
+     * @param listener
+     */
+    public void showThread(String board, int id, int page, RequestListener listener) {
+        showThread(board, id, null, page, 10, listener);
+    }
     /**
      * post an article
      *

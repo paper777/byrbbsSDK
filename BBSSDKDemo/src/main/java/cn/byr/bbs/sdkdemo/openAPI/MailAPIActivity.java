@@ -85,15 +85,15 @@ public class MailAPIActivity extends Activity implements OnItemClickListener {
             if (mAccessToken != null && mAccessToken.isSessionValid()) {
                 switch (position) {
                     case 0:
-                        mMailApi.inbox(mListener);
+                        mMailApi.inbox(2, mListener);
                         break;
 
                     case 1:
-                        mMailApi.outbox(mListener);
+                        mMailApi.outbox(1, mListener);
                         break;
 
                     case 2:
-                        mMailApi.trashbox(mListener);
+                        mMailApi.trashbox(1, mListener);
                         break;
 
                     case 3:

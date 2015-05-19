@@ -38,6 +38,7 @@ public class OpenAPIActivity extends Activity implements OnItemClickListener {
         sAPIList.put("附件接口 - AttachmentApi", "AttachmentAPIActivity");
         sAPIList.put("信件接口 - MailApi", "MailAPIActivity");
         sAPIList.put("收藏夹接口 - FavApi", "FavAPIActivity");
+        sAPIList.put("收录文章接口 - collectionApi", "CollectionAPIActivity");
         sAPIList.put("搜索接口 - SearchApi", "SearchAPIActivity");
         sAPIList.put("提醒接口 - ReferApi", "ReferAPIActivity");
         sAPIList.put("Widget接口  - WidgetApi", "WidgetAPIActivity");

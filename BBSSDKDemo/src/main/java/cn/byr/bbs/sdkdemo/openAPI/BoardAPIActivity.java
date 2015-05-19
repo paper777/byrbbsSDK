@@ -69,7 +69,7 @@ public class BoardAPIActivity extends Activity implements OnItemClickListener {
             if (mAccessToken != null && mAccessToken.isSessionValid()) {
                 switch (position) {
                     case 0:
-                        mBoardApi.getBoardInfo("Zhejiang", mListener);
+                        mBoardApi.getBoardInfo("Zhejiang", 2, mListener);
                         break;
 
                     default:

@@ -23,30 +23,39 @@ public class MailApi extends BaseApi {
     /**
      * show in box using default params
      *
+     * @param page int page number
      * @param listener
      */
-    public void inbox(RequestListener listener) {
+    public void inbox(int page, RequestListener listener) {
         String url = M_URL + "/inbox";
-        asyncRequest(url, HTTP_GET, null, listener);
+        BBSParameters param = new BBSParameters();
+        param.put("page", page);
+        asyncRequest(url, HTTP_GET, param, listener);
     }
 
     /**
      * show out box using default params
      *
+     * @param page int page number
      * @param listener
      */
-    public void outbox(RequestListener listener) {
+    public void outbox(int page, RequestListener listener) {
         String url = M_URL + "/outbox";
+        BBSParameters param = new BBSParameters();
+        param.put("page", page);
         asyncRequest(url, HTTP_GET, null, listener);
     }
 
     /**
      * show trash box using default params
      *
+     * @param page int page number
      * @param listener
      */
-    public void trashbox(RequestListener listener) {
+    public void trashbox(int page, RequestListener listener) {
         String url = M_URL + "/deleted";
+        BBSParameters param = new BBSParameters();
+        param.put("page", page);
         asyncRequest(url, HTTP_GET, null, listener);
     }
 

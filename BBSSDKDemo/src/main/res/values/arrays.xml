@@ -52,6 +52,12 @@
         <item>delete favorite</item>
     </string-array>
 
+    <string-array name="collection_func_list">
+        <item>show collection list</item>
+        <item>add thread to collection list</item>
+        <item>delete thread from collection list</item>
+    </string-array>
+
     <string-array name="search_func_list">
         <item>search board</item>
         <item>search thread by title</item>
