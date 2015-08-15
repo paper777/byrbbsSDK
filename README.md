@@ -9,6 +9,7 @@
 
 - 1.1 修复了threads 报告版面不存在的错误 2015/5
 - 1.2 API page number fix; 增加了收录文章的API接口 2015/5/20
+- 1.3 remove res files(issues #1) 2015/8
 
 ---
 
@@ -23,7 +24,7 @@
 - APK 安装包
 - 源代码工程文件，<html><b>请务必使用提供的[debug keystore][5]签名，否则会导致授权失败！</html>
 
-# About API 
+# About API
 
 - usage 部分示例了API 调用的简单步骤。[**详细API接口函数请查看WIKI**][7]
 - API 元数据（write by dss886) 在cn.byr.bbs.sdk.api.model 或者repository中APImodel下提供
@@ -36,9 +37,9 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.paper777:BBSSDK:1.2@aar'
+    compile 'com.github.paper777:BBSSDK:1.3@aar'
     // or
-    // compile(group: 'com.github.paper777', name: 'BBSSDK', version: '1.2', ext: 'aar')
+    // compile(group: 'com.github.paper777', name: 'BBSSDK', version: '1.3', ext: 'aar')
 
 }
 ```
@@ -60,12 +61,12 @@ dependencies {
 # Authorization setup
 
 ### 0、必要术语说明
-| 参数                   | 含义    | 
-| --------               | :-----  | 
+| 参数                   | 含义    |
+| --------               | :-----  |
 | AppKey(client_id)      | 分配给每个第三方应用的 app key。用于鉴权身份，显示来源等功能。|
 | RedirectURI            | 第三方应用授权回调页面。这里建议使用默认回调页`http://bbs.byr.cn/Oauth2/callback` |
-| Scope                  | 授权项目，用户在新[OAuth2.0][1]授权页中有权利选择赋予应用的功能。| 
-| AccessToken            | 表示用户身份的 token，用于 API 的调用。| 
+| Scope                  | 授权项目，用户在新[OAuth2.0][1]授权页中有权利选择赋予应用的功能。|
+| AccessToken            | 表示用户身份的 token，用于 API 的调用。|
 |
 
 ### 1、填写 APP_KEY 等参数
@@ -100,7 +101,7 @@ mBBSAuth = new BBSAuth(this, Constants.APP_KEY, Constants.REDIRECT_URL, Constant
 
 ```java
 class AuthListener implements BBSAuthListener {
-        
+
         @Override
         public void onComplete(Bundle values) {
             // 从 Bundle 中解析 Token
@@ -136,7 +137,7 @@ class AuthListener implements BBSAuthListener {
 ### 1、实例化API类
 
 ```java
-	/** mAccessToken 为Oauth2AccessToken类 
+	/** mAccessToken 为Oauth2AccessToken类
 		不能为空*/
     mUserApi = new UserApi(mAccessToken);
 ```
